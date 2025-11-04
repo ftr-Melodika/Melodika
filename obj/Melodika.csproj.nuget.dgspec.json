@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj": {}
+    "C:\\Users\\48802641\\Melodika\\Melodika.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj": {
+    "C:\\Users\\48802641\\Melodika\\Melodika.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
+        "projectUniqueName": "C:\\Users\\48802641\\Melodika\\Melodika.csproj",
         "projectName": "Melodika",
-        "projectPath": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
+        "projectPath": "C:\\Users\\48802641\\Melodika\\Melodika.csproj",
         "packagesPath": "C:\\Users\\48802641\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48802641\\Downloads\\Melodika\\obj\\",
+        "outputPath": "C:\\Users\\48802641\\Melodika\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

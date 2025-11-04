@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j+dRSFoZzCQ=",
+  "dgSpecHash": "jlBHyawMskmI3ZHgAfSw8CYO5sqdpke+8AN1z13SMr047X3pQBKmbZeyULIFO8LTqO3ApLhujZid3vndnItVeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
+  "projectFilePath": "C:\\Users\\48802641\\Melodika\\Melodika.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48802641\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\48802641\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -57,12 +57,5 @@
     "C:\\Users\\48802641\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\48802641\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\48802641\\Downloads\\Melodika\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
