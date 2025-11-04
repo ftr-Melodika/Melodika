@@ -1,12 +1,58 @@
- <h1>CANCIONES DESTACADAS</h1>
- 
- @foreach (var cancion in ViewBag.canciones)
- {
-    <div>
-        <img src="" alt="Foto Cancion">
-        <h1>@cancion.Titulo - @cancion.Autor</h1>
-        <p>@cancion.Dificultad</p>
-        <p>@cancion.Valoracion</p>
+@using melodika.Models
+@using System.Linq
+@{
+    ViewData["Title"] = "Canciones";
+    var canciones = ViewBag.canciones as IEnumerable<Cancion> ?? Enumerable.Empty<Cancion>();
+}
 
+<section class="songs-page-compact">
+    <div>
+        <h1>Canciones</h1>
+        <p>No encontrás tu canción? busca la tuya!</p>
+        <div>
+            <input type="text" placeholder="" />
+            <button type="button">🔍</button>
+        </div>
     </div>
- }
+
+    <section>
+        <h2>Canciones populares:</h2>
+        <div>
+            @foreach (var cancion in canciones)
+            {
+                var portada = string.IsNullOrWhiteSpace(cancion.Portada) ? Url.Content("~/imagenes/persona.png") : cancion.Portada;
+                var rating = cancion.Valoracion;
+                if (rating < 0)
+                {
+                    rating = 0;
+                }
+                if (rating > 5)
+                {
+                    rating = 5;
+                }
+            <div>
+                <img src="@portada" alt="Foto Cancion" />
+                <div>
+                    <h3>@cancion.Titulo - @cancion.Autor</h3>
+                    <div>
+                        <span>@cancion.Dificultad</span>
+                        <div>
+                            @for (int star = 1; star <= 5; star++)
+                            {
+                                if (star <= rating)
+                                {
+                                    <span class="filled-compact">☆</span>
+                                }
+                                else
+                                {
+                                    <span>☆</span>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+</section>
