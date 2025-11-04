@@ -673,7 +673,7 @@ body {
 .songs-page-compact {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3% 2% 4%;
+  padding: 3% 5% 8%;
 }
 
 .songs-page-compact > div:first-child {
@@ -735,7 +735,7 @@ body {
 .songs-page-compact section > div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2%;
+  gap: 4%;
 }
 
 .songs-page-compact section > div > div {
