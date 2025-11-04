@@ -24,36 +24,8 @@ public class HomeController : Controller
         return View("allPages");
     }
 
-    public IActionResult Login()
-    {
-        return View("login");
-    }
 
 
-/*
-        public IActionResult LoginGuardar(string correo, string contraseña)
-    {
-        int idUser = BD.logIn(correo, contraseña);
-        if(idUser >= 0){
-            Cuenta cuentaLogueada;
-            cuentaLogueada = BD.getCuenta();
-            string usuario = Objeto.ObjectToString(cuentaLogueada);
-            HttpContext.Session.SetString("usuario", Objeto. ObjectToString (usuario));
-            return View("Cursos"); 
-        }
-        else if(idUser == -1){
-            ViewBag.mensaje("La contraseña o el usuario estan mal");
-            return View("login");
-        }
-        else if (HttpContext.Session.GetString("idUsuario") != null)
-        {
-            ViewBag.mensaje = "Ya hay un usuario logueado. Para ingresar denuevo primero salga de sesion";
-            return View("login");
-        }
-        return View("login");
-
-    }
-*/
     public IActionResult Configuracion()
     {
         return View("Configuracion");
@@ -70,23 +42,6 @@ public class HomeController : Controller
     }
 
 
-    public IActionResult CrearCuenta()
-    {
-
-        return View("CrearCuenta");
-    }
-
-        public IActionResult CrearCuentaGuardar(string correo, string contra1, string contra2, string username)
-    {
-
-        return View("CrearCuenta");
-    }
-
-
-    public IActionResult CrearUsuario()
-    {
-        return View("CrearUsuario");
-    }
 
 
     public IActionResult Cursos()
@@ -95,10 +50,7 @@ public class HomeController : Controller
     }
 
 
-        public IActionResult ElegirUsuario()
-    {
-        return View("ElegirUsuario");
-    }
+
 
 
         public IActionResult LogrosYRecompensas()

@@ -55,7 +55,7 @@ static public List<Cancion> seleccionarCancion()
     */
     static public int logIn(string correo, string contraseña)
     {
-        int idUser;
+        int idUser = -1;
         
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -68,8 +68,17 @@ static public List<Cancion> seleccionarCancion()
         return idUser; 
     }
 
-    static public List<Cuenta> getCuenta(int idCuenta){
-        List<Cuenta> cuentaBuscada = new List<Cuenta>();
+    static public Cuenta getCuenta(int id){
+        
+        Cuenta cuentaBuscada = new Cuenta();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "GetCuenta";
+            cuentaBuscada = connection.QueryFirstOrDefault<Cuenta>(
+                storedProcedure,
+                new{ idCuenta = id },
+                commandType: CommandType.StoredProcedure);
+        }
 
         return cuentaBuscada;
     }

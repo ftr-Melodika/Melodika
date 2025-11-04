@@ -667,4 +667,67 @@ body {
     width: 85%;
   }
 }
+/* Footer */
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2% 20%;
+
+}
+
+.footer div{
+  width: 80%;
+}
+
+.footerIzq {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerIzq div{
+  display: flex;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.footerIzq div img{
+  width: 10%;
+  height: 90%;
+}
+
+.footerIzq p{
+  font-size: larger ;
+}
+
+
+
+.redes{
+  display: flex;
+  justify-content: start;
+  gap: 7%;
+}
+
+.redes img{
+  width: 10%;
+}
+
+.footerIzq div h3{
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.footerIzq p {
+  width: 100%;
+  margin-top: 6%;
+}
+
+
+.footerDer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: larger;
+}
 
