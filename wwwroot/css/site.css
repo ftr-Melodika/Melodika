@@ -898,3 +898,26 @@ body {
     min-height: 100px;
   }
 }
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  display: none;
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+.navbar .nav-link,
+.navbar .dropdown-item {
+    color: #004aad !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .dropdown-item:hover {
+    color: #00308a !important; /* un tono más oscuro al pasar el mouse (opcional) */
+}

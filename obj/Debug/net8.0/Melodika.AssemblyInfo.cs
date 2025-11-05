@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Melodika")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1defeb14a886b2716e804149ee69a3730f65a621")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4b36fb8eab7b080576ad7cc52b352adc789596e")]
->>>>>>> d19f69f8c444b9eedb0aebc3c7850534dc1f5b2e
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08ca2210f1227c5c285c5cdc2ade05200e444b68")]
 [assembly: System.Reflection.AssemblyProductAttribute("Melodika")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Melodika")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
