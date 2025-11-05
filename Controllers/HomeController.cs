@@ -61,6 +61,9 @@ public class HomeController : Controller
     {
         return View("PreguntasFrecuentes");
     }
-
+       public IActionResult Contactos()
+    {
+        return View("Contactos");
+    }
 
 }

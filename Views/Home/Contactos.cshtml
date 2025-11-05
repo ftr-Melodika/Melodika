@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Contactos";
+}
+
+
+<section class="create-account-page">
+    <article class="crear-caja">
+        <h1>Contacto</h1>
+
+        <form class="crear-formulario" method="post">
+            <div class="crear-campo">
+                <label class="visually-hidden" for="contact-name">Nombre</label>
+                <input class="crear-entrada" type="text" id="contact-name" name="nombre" placeholder="Nombre" autocomplete="name" required />
+            </div>
+
+            <div class="crear-campo">
+                <label class="visually-hidden" for="contact-phone">Teléfono</label>
+                <input class="crear-entrada" type="tel" id="contact-phone" name="telefono" placeholder="Teléfono" autocomplete="tel" required />
+            </div>
+
+            <div class="crear-campo">
+                <label class="visually-hidden" for="contact-email">Email</label>
+                <input class="crear-entrada" type="email" id="contact-email" name="email" placeholder="Email" autocomplete="email" required />
+            </div>
+
+            <div class="crear-campo">
+                <label class="visually-hidden" for="contact-subject">Asunto</label>
+                <input class="crear-entrada" type="text" id="contact-subject" name="asunto" placeholder="Asunto" required />
+            </div>
+
+            <div class="crear-campo">
+                <label class="visually-hidden" for="contact-message">Mensaje</label>
+                <textarea class="crear-entrada" id="contact-message" name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="accion-primaria">Enviar mensaje</button>
+        </form>
+    </article>
+</section>
