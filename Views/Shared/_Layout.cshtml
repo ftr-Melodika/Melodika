@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NombreProyecto</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
@@ -12,14 +13,73 @@
 <body>
 
   <header>
-    <nav>
-      <ul>
-        <li>
-          <a href='@Url.Action("todasLasPaginas", "Home")'> PAGINAS PRINCIPALES </a>
-          <a href='@Url.Action("Index", "Home")'> Landing </a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="/imagenes/M negra PNG.png" alt="Logo" style="height:35px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+
+            <!-- PERFIL -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Perfil
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Seguimiento de Usuario</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"> Logros y recompensas</a></li>
+                    <li><a class="dropdown-item" href="#">Progreso</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- CURSOS -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Cursos</a>
+            </li>
+
+            <!-- PRACTICA -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Práctica</a>
+            </li>
+
+            <!-- COMUNIDAD -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Comunidad
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Dar feedback</a></li>
+                <li><a class="dropdown-item" href="#">Grupos</a></li>
+              </ul>
+            </li>
+
+            <!-- SOPORTE -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Soporte
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+                <li><a class="dropdown-item" href="#">Reportar errores</a></li>
+                <li><a class="dropdown-item" href="#">Contacto</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
     </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
   </header>
 
     <main role="main">
@@ -56,6 +116,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
