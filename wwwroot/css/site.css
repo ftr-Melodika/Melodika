@@ -23,8 +23,8 @@ body {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
+  clip: rect(0, 0, 0, 0); /* Oculta visualmente el elemento manteniéndolo accesible para lectores de pantalla */
+  clip-path: inset(50%); /* Alternativa moderna para recortar el contenido y ocultarlo visualmente */
   white-space: nowrap;
   border: 0;
 }
@@ -131,8 +131,8 @@ body {
 .seccion3-imagen {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarse */
+  object-position: center; /* Centra el foco de la imagen dentro del recorte */
   display: block;
   flex: 1 1 auto;
   transition: transform 0.35s ease, filter 0.35s ease;
@@ -170,7 +170,7 @@ body {
 
 .seccion3-card:hover .seccion3-imagen {
   transform: scale(1.08);
-  filter: brightness(0.8);
+  filter: brightness(0.8); /* Oscurece la imagen en hover para resaltar el texto */
 }
 
 .seccion3-card:hover .seccion3-texto {
@@ -273,22 +273,22 @@ body {
 
 .contacto-hero-titulo {
   font-family: "Georgia", serif;
-  font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+  font-size: clamp(1.8rem, 3.6vw, 2.4rem); /* clamp(min, preferido, max): hace que el tamaño sea fluido sin romper el diseño */
   color: #0d3b99;
   margin: 0 0 12px 0;
 }
 
 .contacto-burbujas {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
+  top: 0; right: 0; bottom: 0; left: 0; /* Equivalente a inset: 0; especificado explícitamente */
+  pointer-events: none; /* Evita que las burbujas bloqueen clics del usuario */
 }
 
 .contacto-burbujas span {
   position: absolute;
   background: #F0F8FF;
   border-radius: 50%;
-  filter: blur(1px);
+  filter: blur(1px); /* Aplica un desenfoque suave para lograr una burbuja difusa */
   opacity: 0.8;
 }
 
@@ -909,10 +909,10 @@ body {
   line-height: 1.3;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: -webkit-box; /* Caja flexible antigua requerida por -webkit-line-clamp para cortar líneas */
+  line-clamp: 2; /* Intenta limitar el texto a 2 líneas (soporte variable) */
+  -webkit-line-clamp: 2; /* Limita a 2 líneas en navegadores WebKit */
+  -webkit-box-orient: vertical; /* Orienta la caja para que funcione el truncado en varias líneas */
 }
 
 .songs-page-compact section > div > div > div > div {
