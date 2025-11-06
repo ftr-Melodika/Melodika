@@ -264,6 +264,70 @@ body {
   }
 }
 
+/* Contacto rediseño */
+.contacto-page {
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto-hero-titulo {
+  font-family: "Georgia", serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+  color: #0d3b99;
+  margin: 0 0 12px 0;
+}
+
+.contacto-burbujas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.contacto-burbujas span {
+  position: absolute;
+  background: #F0F8FF;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+.contacto-burbujas span:nth-child(1) { width: 220px; height: 220px; top: -60px; left: -60px; }
+.contacto-burbujas span:nth-child(2) { width: 140px; height: 140px; bottom: 10%; left: 15%; }
+.contacto-burbujas span:nth-child(3) { width: 180px; height: 180px; top: 12%; right: -40px; }
+
+.contacto-info {
+  width: 42%;
+  min-width: 280px;
+  border-left: 6px solid #0084DD;
+  padding-left: 24px;
+}
+
+.contacto-formulario {
+  width: 50%;
+  max-width: 560px;
+  background-color: #F0F8FF;
+  border: 2px solid #0084DD;
+  border-radius: 24px;
+  padding: 32px 36px;
+  box-shadow: 0 10px 24px rgba(13, 59, 153, 0.08);
+}
+
+.contacto-form {
+  gap: 16px;
+}
+
+.contacto-input::placeholder {
+  color: #0d3b99b3;
+}
+
+@media (max-width: 992px) {
+  .contacto-info,
+  .contacto-formulario { width: 100%; }
+  .contacto-info { border-left-width: 4px; padding-left: 18px; }
+  .contacto-formulario { padding: 24px; }
+}
+
 .contenido-principal {
   display: flex;
   flex-direction: column;
@@ -846,6 +910,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
