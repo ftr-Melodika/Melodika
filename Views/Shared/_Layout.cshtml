@@ -15,7 +15,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/imagenes/M negra PNG.png" alt="Logo" style="height:35px;"></a>
+        <a class="navbar-brand" href='@Url.Action("Index", "Home")'><img src="/imagenes/M negra PNG.png" alt="Logo" style="height:35px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
 
-            <!-- PERFIL -->
+            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Perfil
@@ -33,7 +33,7 @@
                 <li class="dropdown-submenu">
                   <a class="dropdown-item dropdown-toggle" href="#">Seguimiento de Usuario</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"> Logros y recompensas</a></li>
+                    <li><a class="dropdown-item" href='@Url.Action("LogrosYRecompensas", "Home")'> Logros y recompensas</a></li>
                     <li><a class="dropdown-item" href="#">Progreso</a></li>
                   </ul>
                 </li>
@@ -67,7 +67,7 @@
                 Soporte
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+                <li><a class="dropdown-item" href='@Url.Action("PreguntasFrecuentes", "Home")'>Preguntas frecuentes</a></li>
                 <li><a class="dropdown-item" href="#">Reportar errores</a></li>
                 <li><a class="dropdown-item" href='@Url.Action("Contactos", "Home")'>Contacto</a></li>
               </ul>
