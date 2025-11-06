@@ -1,24 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\49378703\\Melodika\\Melodika.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\49378703\\Melodika\\Melodika.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\49378703\\Melodika\\Melodika.csproj",
-        "projectName": "Melodika",
-        "projectPath": "C:\\Users\\49378703\\Melodika\\Melodika.csproj",
-        "packagesPath": "C:\\Users\\49378703\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49378703\\Melodika\\obj\\",
-=======
-    "C:\\Users\\49009466\\Downloads\\Melodika\\Melodika.csproj": {}
->>>>>>> aa26610b132f2a570edcf4c50846615b6c427616
   },
   "projects": {
     "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj": {
@@ -26,30 +9,15 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
         "projectName": "Melodika",
-<<<<<<< HEAD
         "projectPath": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
         "packagesPath": "C:\\Users\\48802641\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\48802641\\Downloads\\Melodika\\obj\\",
-=======
-        "projectPath": "C:\\Users\\49009466\\Downloads\\Melodika\\Melodika.csproj",
-        "packagesPath": "C:\\Users\\49009466\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49009466\\Downloads\\Melodika\\obj\\",
->>>>>>> 2ef62bf66e301096f469c724bd08d4f6a256f9fa
->>>>>>> aa26610b132f2a570edcf4c50846615b6c427616
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\48802641\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
-          "C:\\Users\\49378703\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\49009466\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2ef62bf66e301096f469c724bd08d4f6a256f9fa
->>>>>>> aa26610b132f2a570edcf4c50846615b6c427616
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
