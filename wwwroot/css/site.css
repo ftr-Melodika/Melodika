@@ -392,7 +392,7 @@ body {
   }
 }
 
-.login-page {
+.login-page, .pagina-login {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -400,7 +400,7 @@ body {
   padding: 60px 20px;
 }
 
-.login-caja {
+.login-caja, .caja-login {
   width: 100%;
   max-width: 480px;
   background-color: #F0F8FF;
@@ -476,7 +476,7 @@ body {
   }
 }
 
-.create-account-page {
+.create-account-page, .pagina-crear-cuenta {
   min-height: 92vh;
   padding: 6%;
   display: flex;
@@ -543,7 +543,7 @@ body {
   }
 }
 
-.settings-page {
+.settings-page, .pagina-ajustes {
   background-color: #F0F8FF;
   border-radius: 24px;
   border: 2px solid #0084DD;
@@ -552,14 +552,14 @@ body {
   padding: 6%;
 }
 
-.settings-grid {
+.settings-grid, .ajustes-grid {
   display: grid;
   gap: 6% 8%;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   justify-items: center;
 }
 
-.setting-card {
+.setting-card, .ajuste-tarjeta {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -567,7 +567,7 @@ body {
   text-align: center;
 }
 
-.setting-icon {
+.setting-icon, .ajuste-icono {
   align-items: center;
   border: 3px solid #0D3B99;
   border-radius: 50%;
@@ -578,11 +578,11 @@ body {
   background-color: #f0f8ff;
 }
 
-.setting-icon img {
+.setting-icon img, .ajuste-icono img {
   width: 60%;
 }
 
-.setting-label {
+.setting-label, .ajuste-etiqueta {
   color: #0D3B99;
   font-size: 105%;
   font-weight: 600;
@@ -590,11 +590,11 @@ body {
 }
 
 @media (max-width: 575px) {
-  .settings-page {
+  .settings-page, .pagina-ajustes {
     margin: 5% auto;
   }
 
-  .setting-icon {
+  .setting-icon, .ajuste-icono {
     height: 96px;
     width: 96px;
   }
@@ -795,18 +795,18 @@ body {
 
 
 /* Canciones populares */
-.songs-page-compact {
+.songs-page-compact, .pagina-canciones {
   max-width: 1100px;
   margin: 0 auto;
   padding: 3% 5% 8%;
 }
 
-.songs-page-compact > div:first-child {
+.songs-page-compact > div:first-child, .pagina-canciones > div:first-child {
   text-align: center;
   margin-bottom: 4%;
 }
 
-.songs-page-compact h1 {
+.songs-page-compact h1, .pagina-canciones h1 {
   font-size: clamp(180%, 4vw, 250%);
   font-weight: 700;
   color: #004aad;
@@ -814,13 +814,13 @@ body {
   font-family: "Georgia", serif;
 }
 
-.songs-page-compact > div:first-child p {
+.songs-page-compact > div:first-child p, .pagina-canciones > div:first-child p {
   margin: 0 0 2% 0;
   font-size: clamp(90%, 2vw, 100%);
   color: #333;
 }
 
-.songs-page-compact > div:first-child > div {
+.songs-page-compact > div:first-child > div, .pagina-canciones > div:first-child > div {
   display: inline-flex;
   align-items: center;
   background: #e8e8e8;
@@ -829,7 +829,7 @@ body {
   gap: 1%;
 }
 
-.songs-page-compact input {
+.songs-page-compact input, .pagina-canciones input {
   border: none;
   outline: none;
   background: transparent;
@@ -837,7 +837,7 @@ body {
   width: 250px;
 }
 
-.songs-page-compact button {
+.songs-page-compact button, .pagina-canciones button {
   border: none;
   background: transparent;
   font-size: clamp(100%, 2.2vw, 120%);
@@ -845,11 +845,11 @@ body {
   padding: 0;
 }
 
-.songs-page-compact section {
+.songs-page-compact section, .pagina-canciones section {
   margin-top: 4%;
 }
 
-.songs-page-compact h2 {
+.songs-page-compact h2, .pagina-canciones h2 {
   font-size: clamp(130%, 3vw, 180%);
   font-weight: 600;
   color: #004aad;
@@ -857,13 +857,13 @@ body {
   text-align: left;
 }
 
-.songs-page-compact section > div {
+.songs-page-compact section > div, .pagina-canciones section > div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4%;
 }
 
-.songs-page-compact section > div > div {
+.songs-page-compact section > div > div, .pagina-canciones section > div > div {
   background: #f5f8ff;
   border-radius: 12px;
   padding: 2%;
@@ -876,12 +876,12 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.songs-page-compact section > div > div:hover {
+.songs-page-compact section > div > div:hover, .pagina-canciones section > div > div:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.songs-page-compact img {
+.songs-page-compact img, .pagina-canciones img {
   width: 75px;
   height: 75px;
   border-radius: 8px;
@@ -890,7 +890,7 @@ body {
   background: #fff;
 }
 
-.songs-page-compact section > div > div > div {
+.songs-page-compact section > div > div > div, .pagina-canciones section > div > div > div {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -899,7 +899,7 @@ body {
   height: 100%;
 }
 
-.songs-page-compact h3 {
+.songs-page-compact h3, .pagina-canciones h3 {
   font-size: clamp(85%, 1.8vw, 95%);
   font-weight: 600;
   color: #004aad;
@@ -913,7 +913,7 @@ body {
   -webkit-box-orient: vertical; /* Orienta la caja para que funcione el truncado en varias líneas */
 }
 
-.songs-page-compact section > div > div > div > div {
+.songs-page-compact section > div > div > div > div, .pagina-canciones section > div > div > div > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -921,7 +921,7 @@ body {
   margin-top: 2%;
 }
 
-.songs-page-compact section > div > div > div > div > span {
+.songs-page-compact section > div > div > div > div > span, .pagina-canciones section > div > div > div > div > span {
   background: #fff;
   border-radius: 15px;
   padding: 1% 3%;
@@ -931,17 +931,17 @@ body {
   white-space: nowrap;
 }
 
-.songs-page-compact section > div > div > div > div > div {
+.songs-page-compact section > div > div > div > div > div, .pagina-canciones section > div > div > div > div > div {
   display: flex;
   gap: 3%;
   font-size: clamp(90%, 1.8vw, 100%);
 }
 
-.songs-page-compact section > div > div > div > div > div span {
+.songs-page-compact section > div > div > div > div > div span, .pagina-canciones section > div > div > div > div > div span {
   color: #d0d0d0;
 }
 
-.songs-page-compact section > div > div > div > div > div span.filled-compact {
+.songs-page-compact section > div > div > div > div > div span.filled-compact, .pagina-canciones section > div > div > div > div > div span.filled-compact {
   color: #4169e1;
 }
 
@@ -961,18 +961,18 @@ body {
     min-height: 100px;
   }
 }
-.dropdown-submenu {
+.dropdown-submenu, .submenu-desplegable {
   position: relative;
 }
 
-.dropdown-submenu .dropdown-menu {
+.dropdown-submenu .dropdown-menu, .submenu-desplegable .dropdown-menu {
   top: 0;
   left: 100%;
   margin-left: .1rem;
   display: none;
 }
 
-.dropdown-submenu:hover .dropdown-menu {
+.dropdown-submenu:hover .dropdown-menu, .submenu-desplegable:hover .dropdown-menu {
   display: block;
 }
 .navbar .nav-link,
