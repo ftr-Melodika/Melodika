@@ -3,37 +3,50 @@
 }
 
 
-<section class="create-account-page">
-    <article class="crear-caja">
-        <h1>Contacto</h1>
+<section class="contacto-page">
+    <div class="contacto-burbujas" aria-hidden="true">
+    </div>
 
-        <form class="crear-formulario" method="post">
-            <div class="crear-campo">
-                <label class="visually-hidden" for="contact-name">Nombre</label>
-                <input class="crear-entrada" type="text" id="contact-name" name="nombre" placeholder="Nombre" autocomplete="name" required />
+    <div class="contacto-contenido">
+        <article class="contacto-info">
+            <h1 class="contacto-hero-titulo">¿Hablamos?</h1>
+            <p>Contanos en qué podemos ayudarte y te respondemos a la brevedad. También podés escribirnos si querés saber más sobre nuestros cursos y práctica.</p>
+            <hr />
+            <div>
+                <p><strong>Email:</strong> soporte@melodika.app</p>
+                <p><strong>Teléfono:</strong> +54 11 5555-5555</p>
             </div>
+        </article>
 
-            <div class="crear-campo">
-                <label class="visually-hidden" for="contact-phone">Teléfono</label>
-                <input class="crear-entrada" type="tel" id="contact-phone" name="telefono" placeholder="Teléfono" autocomplete="tel" required />
-            </div>
+        <article class="contacto-formulario">
+            <form method="post" class="contacto-form">
+                <div class="contacto-campo">
+                    <label class="visually-hidden" for="contact-name">Nombre</label>
+                    <input class="contacto-input" type="text" id="contact-name" name="nombre" placeholder="Nombre" autocomplete="name" required />
+                </div>
 
-            <div class="crear-campo">
-                <label class="visually-hidden" for="contact-email">Email</label>
-                <input class="crear-entrada" type="email" id="contact-email" name="email" placeholder="Email" autocomplete="email" required />
-            </div>
+                <div class="contacto-campo">
+                    <label class="visually-hidden" for="contact-phone">Teléfono</label>
+                    <input class="contacto-input" type="tel" id="contact-phone" name="telefono" placeholder="Teléfono" autocomplete="tel" required />
+                </div>
 
-            <div class="crear-campo">
-                <label class="visually-hidden" for="contact-subject">Asunto</label>
-                <input class="crear-entrada" type="text" id="contact-subject" name="asunto" placeholder="Asunto" required />
-            </div>
+                <div class="contacto-campo">
+                    <label class="visually-hidden" for="contact-email">Email</label>
+                    <input class="contacto-input" type="email" id="contact-email" name="email" placeholder="Email" autocomplete="email" required />
+                </div>
 
-            <div class="crear-campo">
-                <label class="visually-hidden" for="contact-message">Mensaje</label>
-                <textarea class="crear-entrada" id="contact-message" name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-            </div>
+                <div class="contacto-campo">
+                    <label class="visually-hidden" for="contact-subject">Asunto</label>
+                    <input class="contacto-input" type="text" id="contact-subject" name="asunto" placeholder="Asunto" required />
+                </div>
 
-            <button type="submit" class="accion-primaria">Enviar mensaje</button>
-        </form>
-    </article>
+                <div class="contacto-campo">
+                    <label class="visually-hidden" for="contact-message">Mensaje</label>
+                    <textarea class="contacto-input" id="contact-message" name="mensaje" placeholder="Mensaje" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="contacto-boton">Enviar mensaje</button>
+            </form>
+        </article>
+    </div>
 </section>
