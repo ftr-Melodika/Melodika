@@ -2455,39 +2455,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\48802641\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\49378703\\.nuget\\packages\\": {},
->>>>>>> 2bbc5d12fd954705c47195c6c6b6ec21a342f108
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
       "projectName": "Melodika",
       "projectPath": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
       "packagesPath": "C:\\Users\\48802641\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\48802641\\Downloads\\Melodika\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\49378703\\Melodika\\Melodika.csproj",
-      "projectName": "Melodika",
-      "projectPath": "C:\\Users\\49378703\\Melodika\\Melodika.csproj",
-      "packagesPath": "C:\\Users\\49378703\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\49378703\\Melodika\\obj\\",
->>>>>>> 2bbc5d12fd954705c47195c6c6b6ec21a342f108
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\48802641\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\49378703\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2bbc5d12fd954705c47195c6c6b6ec21a342f108
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
