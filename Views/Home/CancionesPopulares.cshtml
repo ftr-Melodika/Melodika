@@ -2,7 +2,6 @@
 @using System.Linq
 @{
     ViewData["Title"] = "Canciones";
-    var canciones = ViewBag.canciones as IEnumerable<Cancion> ?? Enumerable.Empty<Cancion>();
 }
 
 <section class="songs-page-compact">
@@ -18,37 +17,25 @@
     <section>
         <h2>Canciones populares:</h2>
         <div>
-            @foreach (var cancion in canciones)
+            @foreach (Cancion cancion in ViewBag.canciones)
             {
-                var portada = string.IsNullOrWhiteSpace(cancion.Portada) ? Url.Content("~/imagenes/persona.png") : cancion.Portada;
-                var rating = cancion.Valoracion;
-                if (rating < 0)
-                {
-                    rating = 0;
-                }
-                if (rating > 5)
-                {
-                    rating = 5;
-                }
             <div>
-                <img src="@portada" alt="Foto Cancion" />
+                <img src="" alt="Foto Cancion" />
                 <div>
                     <h3>@cancion.Titulo - @cancion.Autor</h3>
                     <div>
                         <span>@cancion.Dificultad</span>
-                        <div>
-                            @for (int star = 1; star <= 5; star++)
-                            {
-                                if (star <= rating)
-                                {
-                                    <span class="filled-compact">☆</span>
-                                }
-                                else
-                                {
-                                    <span>☆</span>
-                                }
-                            }
-                        </div>
+                        @switch(cancion.Valoracion){
+                            case 0:<span>⭐</span>
+                            break;
+                            case 1:<span>⭐⭐</span>
+                            break;
+                            case 2:<span>⭐⭐⭐</span>
+                            break;
+                            default: <span>Sin valoracion</span>
+                            break;
+                        }
+                        
                     </div>
                 </div>
             </div>
