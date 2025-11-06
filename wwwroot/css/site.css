@@ -10,10 +10,8 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #0D3B99;
-  margin: 10px;
-  padding: 10px;
 }
 
 .visually-hidden {
@@ -33,6 +31,7 @@ body {
   width: 100%;
   height: auto;
 }
+
 .accion-primaria{
   background-color: #0084DD;
   color: #F0F8FF;
@@ -44,8 +43,7 @@ body {
   text-align: center;
 }
 
-.contacto-boton,
-.login-boton {
+.contacto-boton, .login-boton {
   background-color: #0084DD;
   color: #F0F8FF; 
   border: none;
