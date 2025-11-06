@@ -980,7 +980,6 @@ body {
     color: #004aad !important;
 }
 
-.navbar .nav-link:hover,
-.navbar .dropdown-item:hover {
-    color: #00308a !important; /* un tono más oscuro al pasar el mouse (opcional) */
+.bg-body-tertiary{
+  background-color: #fff !important;
 }

@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "login";
+    ViewData["Title"] = "Login";
 }
 
 <section class="login-page">
@@ -14,12 +14,12 @@
                 <label class="visually-hidden" for="login-password">Contraseña</label>
                 <input class="login-entrada" type="password" id="login-password" name="password" placeholder="Contraseña"/>
             </div>
-            <a href='@Url.Action("ElegirUsuario", "Home")' class= "login-boton"> Iniciar sesion </a>
+            <a href='@Url.Action("ElegirUsuario", "Account")' class= "login-boton"> Iniciar sesion </a>
         </form>
 
         <p>
             ¿No creaste tu cuenta todavia?<br/>
-            <a href='@Url.Action("CrearCuenta", "Home")' class = "login-enlace"> Crear cuenta </a>
+            <a href='@Url.Action("CrearCuenta", "Account")' class = "login-enlace"> Crear cuenta </a>
         </p>
 
         <nav aria-label="Opciones de redes sociales">
