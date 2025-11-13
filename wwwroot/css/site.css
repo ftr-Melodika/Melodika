@@ -733,7 +733,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2% 20%;
-
+  
 }
 
 .footer div{
@@ -752,8 +752,8 @@ body {
 }
 
 .footerIzq div img{
-  width: 10%;
-  height: 90%;
+  height: 40px;
+  width: auto;
 }
 
 .footerIzq p{
@@ -769,7 +769,16 @@ body {
 }
 
 .redes img{
-  width: 10%;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+/* Ajuste visual: algunos assets (como Spotify) tienen más espacio transparente y se ven más chicos */
+.redes img[alt="Spotify"]{
+  transform: scale(1.18);
+  transform-origin: center;
 }
 
 .footerIzq div h3{
