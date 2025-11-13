@@ -15,7 +15,14 @@ public class AccountController : Controller
 
         public IActionResult Login()
     {
-        return View("Login");
+        Usuario user = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        if (user == null){
+            return View("Login");
+        }
+        else{
+            return RedirectToAction("ElegirUsuario", "Account");
+        } 
+
     }
 
 

@@ -24,7 +24,7 @@ static public List<Cancion> seleccionarCancion()
 
 
 
-static public List<Cancion> seleccionarCancion()
+static public List<Cancion> GetCanciones()
 {
     List<Cancion> canciones = new List<Cancion>();
     
@@ -82,6 +82,19 @@ static public List<Cancion> seleccionarCancion()
 
         return cuentaBuscada;
     }
+
+        static public List<Curso> getCursos(){
+        
+        List<Curso> cursos = new List<Curso>();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "GetCursos";
+            cursos = connection.Query<Curso>(storedProcedure, commandType: CommandType.StoredProcedure).ToList();
+        }
+
+        return cursos;
+    }
+
 
 }
 

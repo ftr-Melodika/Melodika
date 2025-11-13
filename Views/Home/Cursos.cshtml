@@ -1,3 +1,16 @@
+@using melodika.Models
+@using System.Linq
  @{
     ViewData["Title"] = "Cursos";
 }
+
+<section>
+    @foreach (Curso curso in ViewBag.cursos)
+    {
+        <div>
+            <h1>@curso.TituloCurso</h1>
+            <p>@curso.Descripcion</p>  
+               
+        </div>  
+    }
+</section>

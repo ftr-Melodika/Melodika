@@ -36,7 +36,7 @@ public class HomeController : Controller
     public IActionResult CancionesPopulares()
     {
         List<Cancion> canciones = new List<Cancion>();
-        canciones = BD.seleccionarCancion();
+        canciones = BD.GetCanciones();
         ViewBag.canciones = canciones;
         return View("CancionesPopulares");
     }
@@ -46,6 +46,9 @@ public class HomeController : Controller
 
     public IActionResult Cursos()
     {
+        List<Curso> cursos = new List<Curso>();
+        cursos = BD.getCursos();
+        ViewBag.cursos = cursos;
         return View("Cursos");
     }
 
