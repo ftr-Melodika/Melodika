@@ -1,3 +1,5 @@
+
+
 html {
   font-size: 14px;
   min-height: 100%;
@@ -63,22 +65,25 @@ body {
   margin-top: 60px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: ArsenicaTrial;
 }
 
 .icon-box {
   text-align: center;
-  padding: 20px;
+  padding: 2%;
+  width: 30%;
 }
 
 .icon-box i {
   font-size: 40px;
   color: #0084DD;
-  margin-bottom: 15px;
+  margin-bottom: 2%;
 }
 
 .icon-box img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  margin-bottom: 2%;
 }
 
 .contact-form {

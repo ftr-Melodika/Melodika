@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Demibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-DemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-Extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ArsenicaTrial';
+    src: url('../fonts/ArsenicaTrial-ExtraboldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+  }
