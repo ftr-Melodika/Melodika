@@ -24,22 +24,31 @@ public class AccountController : Controller
     {
         int idUser = BD.logIn(correo, contraseña);
 
-        if(idUser > 0){
-            Cuenta cuentaLogueada;
-            cuentaLogueada = BD.getCuenta(idUser);
-            string usuario = Objeto.ObjectToString(cuentaLogueada);
-            HttpContext.Session.SetString("usuario", Objeto.ObjectToString (usuario));
-            return RedirectToAction("Cursos", "Home"); 
-        }
-        else if(HttpContext.Session.GetString("idUsuario") != null )
+        if(HttpContext.Session.GetString("usuario") != null)
         {
             ViewBag.mensaje = "Ya hay un usuario logueado. Para ingresar denuevo primero salga de sesion";
             return View("Login");
         }
+
+        if(idUser > 0 ){
+           Cuenta usuarioLogueado;
+            usuarioLogueado = BD.getCuenta(idUser);
+            if(usuarioLogueado != null){
+                string usuario = Objeto.ObjectToString(usuarioLogueado);
+                HttpContext.Session.SetString("usuario", usuario);
+                return RedirectToAction("ElegirUsuario", "Account");
+            }
+            else{
+                ViewBag.mensaje = "No se pudo obtener el usuario";
+                return View("Login");
+            }
+        }
         else{
-            ViewBag.mensaje("La contraseña o el usuario estan mal");
+            ViewBag.mensaje = "La contraseña o el usuario estan mal";
             return View("Login");
         }
+
+        
 
 
     }
@@ -65,6 +74,13 @@ public class AccountController : Controller
     public IActionResult ElegirUsuario()
     {
         return View("ElegirUsuario");
+    }
+    public IActionResult logout()
+    {
+
+        HttpContext.Session.Remove("usuario");
+        ViewBag.mensaje = "Usted salió correctamente de la sesión.";
+        return RedirectToAction("Index", "Home"); 
     }
 
 }

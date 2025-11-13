@@ -59,7 +59,7 @@ static public List<Cancion> seleccionarCancion()
         
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string storedProcedure = "loginCuenta";
+            string storedProcedure = "LoginCuenta";
             idUser = connection.QueryFirstOrDefault<int>(
                 storedProcedure,
                 new{ CorreoElectronico = correo, Contraseña = contraseña},
