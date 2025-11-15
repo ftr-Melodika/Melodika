@@ -729,10 +729,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2% 20%;
+
   
 }
-
+.card{
+  color: white;
+}
 .footer div{
+  align-items: center;
   width: 80%;
 }
 
@@ -748,10 +752,9 @@ body {
 }
 
 .footerIzq div img{
-  height: 40px;
+  height: 150px;
   width: auto;
 }
-
 .footerIzq p{
   font-size: larger ;
 }
@@ -761,14 +764,22 @@ body {
   justify-content: start;
   gap: 7%;
 }
-
+.footer{
+  margin-top: 9%;
+  margin-left: 4%;
+}
 .redes img{
   width: 32px;
   height: 32px;
   object-fit: contain;
   aspect-ratio: 1 / 1;
+  
 }
-
+.p{
+  text-align: center;
+  margin-top: 15%;
+  margin-left: 10%;
+}
 /* Ajuste visual: algunos assets (como Spotify) tienen más espacio transparente y se ven más chicos */
 .redes img[alt="Spotify"]{
   transform: scale(1.18);
@@ -793,6 +804,8 @@ body {
   justify-content: space-between;
   gap: 20px;
   font-size: larger;
+  margin-left: auto;
+
 }
 
 

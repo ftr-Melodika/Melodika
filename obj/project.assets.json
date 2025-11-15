@@ -2455,23 +2455,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\49092806\\.nuget\\packages\\": {},
+    "C:\\Users\\Daniela\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
+      "projectUniqueName": "C:\\Users\\Daniela\\OneDrive\\Escritorio\\melodika\\Melodika\\Melodika.csproj",
       "projectName": "Melodika",
-      "projectPath": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
-      "packagesPath": "C:\\Users\\49092806\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\49092806\\Downloads\\Melodika\\obj\\",
+      "projectPath": "C:\\Users\\Daniela\\OneDrive\\Escritorio\\melodika\\Melodika\\Melodika.csproj",
+      "packagesPath": "C:\\Users\\Daniela\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Daniela\\OneDrive\\Escritorio\\melodika\\Melodika\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\49092806\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Daniela\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2497,7 +2497,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -2539,7 +2540,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
