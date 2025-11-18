@@ -74,10 +74,7 @@ static public List<Cancion> GetCanciones()
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string storedProcedure = "GetCuenta";
-            cuentaBuscada = connection.QueryFirstOrDefault<Cuenta>(
-                storedProcedure,
-                new{ idCuenta = id },
-                commandType: CommandType.StoredProcedure);
+            cuentaBuscada = connection.QueryFirstOrDefault<Cuenta>(storedProcedure,new{ idCuenta = id },commandType: CommandType.StoredProcedure);
         }
 
         return cuentaBuscada;
@@ -95,6 +92,17 @@ static public List<Cancion> GetCanciones()
         return cursos;
     }
 
+        static public List<Usuario> GetUsuariosCuentaSimple(int idCuenta){
+            List<Usuario> usuarios = new List<Usuario>();
+            
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "GetUsuariosCuentaSimple";
+            usuarios = connection.Query<Usuario>(storedProcedure, new{idCuenta = idCuenta}, commandType: CommandType.StoredProcedure).ToList();
+        }
+
+            return usuarios;
+        }
 
 }
 

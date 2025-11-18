@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "MostrarUsuario";
+}
+
+   <main class="contenido-principal">
+
+   <section class="seccion-usuarios">  
+@*
+      <a class="links" href='@Url.Action("Cursos", "Home")'>
+          <article class="usuario-tarjeta">
+          
+            <div class="usuario-circulo">
+              <img src="../imagenes/camara2.png" alt="icono usuario uno">
+            </div>
+            
+            <p>Usuario uno</p>
+            
+          </article>
+      </a>
+      <a class="links" href='@Url.Action("Cursos", "Home")'> 
+            <article class="usuario-tarjeta">
+              <div class="usuario-circulo">
+                <img src="../imagenes/camara2.png" alt="icono usuario dos">
+              </div>
+              
+              <p>Usuario dos</p>
+            </article>
+      </a>
+
+       *@
+      <a class="links" href='@Url.Action("CrearUsuario", "Account")'> 
+            <article class="usuario-tarjeta">
+              <div class="usuario-circulo">
+                <img src="../imagenes/A.png" alt="crear usuario">
+              </div>
+              <p>Crear usuario</p>
+            </article>
+      </a>
+    </section>
+
+    <div>
+      <a href='@Url.Action("LogOut", "Account")' class = "accion-primaria"> Cerrar sesion </a>
+    </div>
+
+  </main>
