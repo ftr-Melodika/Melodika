@@ -998,3 +998,10 @@ body {
 .bg-body-tertiary{
   background-color: #fff !important;
 }
+
+/*Cursos*/
+.CursosTitulo
+{
+display: flex;
+justify-content: center;
+}
