@@ -734,6 +734,7 @@ body {
 }
 .card{
   color: white;
+  border: none !important;
 }
 .footer div{
   align-items: center;
@@ -758,22 +759,18 @@ body {
 .footerIzq p{
   font-size: larger ;
 }
-
+.footerDer{
+  font-size: 22px !important;
+}
 .redes{
   display: flex;
   justify-content: start;
   gap: 7%;
+  margin-left: 20%;
 }
 .footer{
   margin-top: 9%;
   margin-left: 4%;
-}
-.redes img{
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  aspect-ratio: 1 / 1;
-  
 }
 .p{
   text-align: center;
@@ -998,3 +995,80 @@ body {
 .bg-body-tertiary{
   background-color: #fff !important;
 }
+
+
+/* Contenedor principal: logo a la izq, links a la der */
+.footer {
+  position: relative !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 40px 10% 70px !important; /* extra abajo para el copyright */
+}
+
+/* Izquierda: logo + slogan */
+.footerIzq {
+  text-align: center !important;
+}
+
+.footerIzq p {
+  margin-top: 25px !important; /* alinea el slogan a la altura de las apps */
+}
+
+/* Derecha: textos + apps todo centrado en columna */
+.footerDer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+.footerDer .footerDer {
+  text-align: center !important;
+}
+
+/* Apps centradas debajo de "Ayuda" */
+.redes {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+}
+
+.redes img {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Línea horizontal arriba del copyright */
+.footer::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 10% !important;
+  right: 10% !important;
+  bottom: 40px !important;
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Copyright centrado debajo de la línea */
+.footer > p:last-child {
+  position: absolute !important;
+  bottom: 0px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  font-size: 14px !important;
+  opacity: 0.9 !important;
+}
+footer {
+  font-size: 24px !important;
+  border: none !important;
+}
+
+
+/*Cursos*/
+.CursosTitulo
+{
+display: flex;
+justify-content: center;
+}
+
