@@ -1,6 +1,32 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\49092806\\Melodika\\Melodika.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\49092806\\Melodika\\Melodika.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\49092806\\Melodika\\Melodika.csproj",
+        "projectName": "Melodika",
+        "projectPath": "C:\\Users\\49092806\\Melodika\\Melodika.csproj",
+        "packagesPath": "C:\\Users\\49092806\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49092806\\Melodika\\obj\\",
+=======
+<<<<<<< HEAD
+    "C:\\Users\\49378703\\Melodika\\Melodika.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\49378703\\Melodika\\Melodika.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\49378703\\Melodika\\Melodika.csproj",
+        "projectName": "Melodika",
+        "projectPath": "C:\\Users\\49378703\\Melodika\\Melodika.csproj",
+        "packagesPath": "C:\\Users\\49378703\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49378703\\Melodika\\obj\\",
+=======
     "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj": {}
   },
   "projects": {
@@ -12,12 +38,22 @@
         "projectPath": "C:\\Users\\48802641\\Downloads\\Melodika\\Melodika.csproj",
         "packagesPath": "C:\\Users\\48802641\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\48802641\\Downloads\\Melodika\\obj\\",
+>>>>>>> 6cea9663237163b3224865735193b6cd94f3f360
+>>>>>>> a620d52cf38160756bfae7301c035d25d11b553d
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\49092806\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+          "C:\\Users\\49378703\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\48802641\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 6cea9663237163b3224865735193b6cd94f3f360
+>>>>>>> a620d52cf38160756bfae7301c035d25d11b553d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,7 +79,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
+<<<<<<< HEAD
+        },
+        "SdkAnalysisLevel": "9.0.200"
+=======
         }
+>>>>>>> a620d52cf38160756bfae7301c035d25d11b553d
       },
       "frameworks": {
         "net8.0": {
@@ -85,7 +126,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+>>>>>>> a620d52cf38160756bfae7301c035d25d11b553d
         }
       }
     }

@@ -15,15 +15,15 @@ public class AccountController : Controller
 
         public IActionResult Login()
     {
-        Usuario user = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        Usuario user = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));//Saca de sesion
         if (user == null){
             return View("Login");
         }
         else{
-            return RedirectToAction("ElegirUsuario", "Account");
+            return RedirectToAction("MostrarUsuario", "Account");
         } 
 
-    }
+    } //
 
 
 
@@ -36,14 +36,14 @@ public class AccountController : Controller
             ViewBag.mensaje = "Ya hay un usuario logueado. Para ingresar denuevo primero salga de sesion";
             return View("Login");
         }
-
+        //verificar usuario
         if(idUser > 0 ){
            Cuenta usuarioLogueado;
             usuarioLogueado = BD.getCuenta(idUser);
             if(usuarioLogueado != null){
-                string usuario = Objeto.ObjectToString(usuarioLogueado);
-                HttpContext.Session.SetString("usuario", usuario);
-                return RedirectToAction("ElegirUsuario", "Account");
+                string usuario = Objeto.ObjectToString(usuarioLogueado); //lo paso a string
+                HttpContext.Session.SetString("usuario", usuario); //poner en sesion
+                return RedirectToAction("MostrarUsuario", "Account");
             }
             else{
                 ViewBag.mensaje = "No se pudo obtener el usuario";
@@ -78,9 +78,9 @@ public class AccountController : Controller
         return View("CrearUsuario");
     }
 
-    public IActionResult ElegirUsuario()
+    public IActionResult MostrarUsuario()
     {
-        return View("ElegirUsuario");
+        return View("MostrarUsuario");
     }
     public IActionResult logout()
     {
