@@ -589,6 +589,88 @@ body {
 }
 /*PAGINA CONFIGURACION FIN*/
 
+/* PAGINA CURSOS */
+.CursosTitulo {
+  font-family: "Georgia", serif;
+  font-size: clamp(28px, 4vw, 42px);
+  color: #0d3b99;
+  text-align: center;
+  margin: 5% 0 3%;
+}
+
+.SeccionCursos {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  flex-wrap: wrap;
+  padding: 0 6% 8%;
+  font-family: "Poppins", sans-serif;
+}
+
+.SeccionCursos > div {
+  width: min(300px, 92vw);
+  min-height: 260px;
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(120, 130, 150, 0.35);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.SeccionCursos > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.SeccionCursos > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 25, 40, 0.22), rgba(17, 25, 40, 0.38));
+  z-index: 1;
+}
+
+.SeccionCursos > div:nth-child(1)::before { background-image: url("/imagenes/link1.png"); }
+.SeccionCursos > div:nth-child(2)::before { background-image: url("/imagenes/link2.png"); }
+.SeccionCursos > div:nth-child(3)::before { background-image: url("/imagenes/link3.png"); }
+.SeccionCursos > div:nth-child(4)::before { background-image: url("/imagenes/link4.png"); }
+
+.SeccionCursos > div > * {
+  position: relative;
+  z-index: 2;
+}
+
+.SeccionCursos > div h1 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.SeccionCursos > div p {
+  color: #f4f6fb;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .SeccionCursos {
+    gap: 20px;
+  }
+
+  .SeccionCursos > div {
+    width: 100%;
+    min-height: auto;
+    padding: 22px;
+  }
+}
+
 .crear-usuario {
   text-align: center;
   padding: 6% 0;
