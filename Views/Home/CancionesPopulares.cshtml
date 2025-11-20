@@ -20,11 +20,17 @@
             @foreach (Cancion cancion in ViewBag.canciones)
             {
             <div class="song-card">
+
                 <img src="" alt="Foto Cancion" />
+
                 <div class="song-info">
+
                     <h3>@cancion.Titulo - @cancion.Autor</h3>
+
                     <div class="song-meta">
+
                         <span>@cancion.Dificultad</span>
+                        
                         <div class="canciones-estrellas">
                             @switch(cancion.Valoracion){
                                 case 0:<span>⭐☆☆</span>

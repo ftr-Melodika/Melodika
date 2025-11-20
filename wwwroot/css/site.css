@@ -331,7 +331,7 @@ body {
   gap: 20px;
 }
 
-.seccion-usuarios {
+.contenido-principal section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,12 +355,12 @@ body {
   margin: auto;
 }
 
-.seccion-usuarios img {
+.contenido-principal section img {
   width: 45%;
   height: auto;
 }
 
-.seccion-usuarios p {
+.contenido-principal section p {
   margin-top: 10px;
   font-size: 120%;
   font-weight: bold;
@@ -379,7 +379,7 @@ body {
     height: 100px;
   }
 
-  .seccion-usuarios p {
+  .contenido-principal section p {
     font-size: 100%;
   }
 }
@@ -435,15 +435,17 @@ body {
   color: #0D3B99;
 }
 
-.pagina-login nav a {
+.pagina-login div a {
   color: #0084DD;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
   margin: 6px 0;
+  justify-content: center;
+  margin-left: 17%;
 }
 
-.login-page nav {
+.login-page div {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -464,7 +466,7 @@ body {
     font-size: 95%;
   }
 
-.pagina-login nav a,.pagina-login article button{
+.pagina-login div a,.pagina-login article button{
     font-size: 100%;
   }
 }
@@ -527,59 +529,14 @@ body {
     padding: 36px 28px;
   }
 }
-
-.settings-page, .pagina-ajustes {
-  background-color: #F0F8FF;
-  border-radius: 24px;
-  border: 2px solid #0084DD;
-  margin: 8% auto;
-  max-width: 900px;
-  padding: 6%;
-}
-
-.settings-grid, .ajustes-grid {
-  display: grid;
-  gap: 6% 8%;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  justify-items: center;
-}
-
-.setting-card, .ajuste-tarjeta {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 6%;
-  text-align: center;
-}
-
-.setting-icon, .ajuste-icono {
-  align-items: center;
-  border: 3px solid #0D3B99;
-  border-radius: 50%;
-  display: flex;
-  height: 120px;
-  justify-content: center;
-  width: 120px;
-  background-color: #f0f8ff;
-}
-
-.setting-icon img, .ajuste-icono img {
-  width: 60%;
-}
-
-.setting-label, .ajuste-etiqueta {
-  color: #0D3B99;
-  font-size: 105%;
-  font-weight: 600;
-  text-decoration: none;
-}
-
+/*PAGINA AJUSTES*/
+/*PAGINA AJUSTES*/
 @media (max-width: 575px) {
-  .settings-page, .pagina-ajustes {
+  .pagina-ajustes {
     margin: 5% auto;
   }
 
-  .setting-icon, .ajuste-icono {
+  .setting-icon {
     height: 96px;
     width: 96px;
   }
@@ -660,7 +617,7 @@ body {
 }
 
 
-.faq-item {
+.faq div{
   background-color: #f0f7ff;
   border-radius: 12px;
   width: 60%;
@@ -671,12 +628,12 @@ body {
   transition: 0.2s;
 }
 
-.faq-item:hover {
+.faq div:hover {
   transform: scale(1.01);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-.faq-item h3 {
+.faq div h3 {
   color: #004aad;
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -690,7 +647,7 @@ body {
 }
 
 
-.contact-btn {
+.faq button {
   margin-top: 40px;
   background-color: #007bff;
   color: white;
@@ -703,7 +660,7 @@ body {
   transition: 0.2s;
 }
 
-.contact-btn:hover {
+.faq button:hover {
   background-color: #005fcc;
   transform: scale(1.05);
 }
@@ -902,6 +859,7 @@ footer .card { border: none !important; }
     width: 100%;
   }
 }
+/*Fin Canciones Populares*/
 
 .dropdown-submenu, .submenu-desplegable {
   position: relative;
