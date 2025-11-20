@@ -69,4 +69,9 @@ public class HomeController : Controller
         return View("Contactos");
     }
 
+    public IActionResult Feedback()
+    {
+        return View("Feedback");
+    }
+
 }
