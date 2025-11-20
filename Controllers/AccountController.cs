@@ -86,6 +86,24 @@ public class AccountController : Controller
         ViewBag.usuarios = usuarios;
         return View("MostrarUsuario");
     }
+
+    public IActionResult SeleccionarUsuario(int idUsuario)
+    {
+        Usuario usuario = BD.GetUsuarioSimple(idUsuario);
+        if(usuario != null)
+        {
+            ViewBag.usuario = usuario;
+            string usuarioString = Objeto.ObjectToString(usuario); 
+            HttpContext.Session.SetString("usuario", usuarioString); 
+            return RedirectToAction("Cursos", "Home");
+        }
+        else
+        {
+            return RedirectToAction("MostrarUsuario", "Account");
+            ViewBag.mensaje = "No hay usuarios disponibles para esta cuenta";
+        }
+    }
+
     public IActionResult logout()
     {
 
