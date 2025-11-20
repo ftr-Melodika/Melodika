@@ -2,20 +2,20 @@
     ViewData["Title"] = "Login";
 }
 
-<section class="login-page">
+<section class="pagina-login">
     <article class="login-caja">
         <h1>Inicio de sesion en melodika</h1>
         
-        <form class="login-formulario" method="post" action='@Url.Action("LoginGuardar", "Account")'>
+        <form method="post" action='@Url.Action("LoginGuardar", "Account")'>
             
-            <div class="login-campo">
+            <div>
             
-                <input class="login-entrada" type="text" id="login-email" name="correo" placeholder="Correo electronico o telefono"/>
+                <input type="text" id="login-email" name="correo" placeholder="Correo electronico o telefono"/>
             </div>
             
-            <div class="login-campo">
+            <div>
 
-                <input class="login-entrada" type="password" id="login-password" name="contraseña" placeholder="Contraseña"/>
+                <input type="password" id="login-password" name="contraseña" placeholder="Contraseña"/>
             </div>
             
             <button type="submit" class="login-boton"> Iniciar sesion </button>
@@ -28,9 +28,9 @@
         </p>
 
         <nav aria-label="Opciones de redes sociales">
-            <a class="login-enlace" href="#">Iniciar sesión con Google</a>
-            <a class="login-enlace" href="#">Iniciar sesión con Facebook</a>
-            <a class="login-enlace" href="#">Iniciar sesión con Instagram</a>
+            <a href="#">Iniciar sesión con Google</a>
+            <a href="#">Iniciar sesión con Facebook</a>
+            <a href="#">Iniciar sesión con Instagram</a>
         </nav>
     </article>
 </section>

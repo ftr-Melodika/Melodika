@@ -1,5 +1,3 @@
-
-
 html {
   font-size: 14px;
   min-height: 100%;
@@ -129,7 +127,7 @@ body {
 }
 
 .seccion3-texto {
-  position: absolute;
+  position: absolute; /*Left y bottom se tienen que usar por el position: absolute;*/
   left: 50%;
   bottom: 8%;
   transform: translateX(-50%); /*Desplaza para la izquierda*/
@@ -146,11 +144,11 @@ body {
   color: #0D3B99;
   text-decoration: none;
   display: block;
-  font-weight: 700;
+  font-weight: 700; /*Marca que tan gruesa es la fuente*/
   letter-spacing: 0.05em; /*Espacio entre las letras em es igual al tamaño de fuente*/
   text-transform: uppercase;
   font-size: 95%;
-  transition: color 0.35s ease;
+  transition: color 0.35s ease; /*Transiciona el color de #0D3B99 a #ffffff*/
 }
 
 .seccion3-card:hover {
@@ -170,14 +168,14 @@ body {
 }
 
 .seccion3-card:hover .seccion3-enlace {
-  color: #ffffff;
+  color: #ffffff; /*Cambia el color del texto a #ffffff gracias al transition del .seccion3-enlace*/
 }
   
 
 
 .contacto-info h2 {
   font-size: 180%;
-  font-weight: bold;
+  font-weight: bold; /*Marca que tan gruesa es la fuente*/
   letter-spacing: 1px;
 }
 
@@ -221,7 +219,7 @@ body {
 
 .contacto-contenido {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /*Se extiende por dos filas si no entran en la pantalla*/
   width: 100%;
   max-width: 96%;
   align-items: flex-start;
@@ -275,11 +273,11 @@ body {
 }
 
 .contacto-burbujas span {
-  position: absolute;
+  position: absolute; /*Ayuda al posicionamiento*/
   background: #F0F8FF;
   border-radius: 50%;
   filter: blur(1px); /* Aplica un desenfoque suave para lograr una burbuja difusa */
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .contacto-burbujas span:nth-child(1) { width: 220px; height: 220px; top: -60px; left: -60px; }
@@ -373,7 +371,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  border-radius: 9999px;
 }
 
 @media (max-width: 600px) {
@@ -387,7 +384,7 @@ body {
   }
 }
 
-.login-page, .pagina-login {
+.pagina-login {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -395,7 +392,7 @@ body {
   padding: 60px 20px;
 }
 
-.login-caja, .caja-login {
+.pagina-login article {
   width: 100%;
   max-width: 480px;
   background-color: #F0F8FF;
@@ -405,24 +402,24 @@ body {
   text-align: center;
 }
 
-.login-caja h1 {
+.pagina-login article h1 {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 220%;
   margin-bottom: 32px;
   color: #0D3B99;
 }
 
-.login-formulario {
+.pagina-login article form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.login-campo {
+.pagina-login article div {
   text-align: left;
 }
 
-.login-entrada {
+.pagina-login article input {
   width: 100%;
   padding: 14px 18px;
   font-size: 100%;
@@ -432,13 +429,13 @@ body {
   color: #0D3B99;
 }
 
-.login-caja p {
+.pagina-login article p {
   margin: 28px 0 18px;
   font-size: 95%;
   color: #0D3B99;
 }
 
-.login-enlace {
+.pagina-login nav a {
   color: #0084DD;
   font-weight: 600;
   text-decoration: none;
@@ -453,25 +450,26 @@ body {
 }
 
 @media (max-width: 576px) {
-  .login-caja {
+
+.pagina-login article   {
     padding: 36px 28px;
   }
 
-  .login-caja h1 {
+
+.pagina-login article   h1 {
     font-size: 200%;
   }
 
-  .login-entrada {
+  input {
     font-size: 95%;
   }
 
-  .login-boton,
-  .login-enlace {
+.pagina-login nav a,.pagina-login article button{
     font-size: 100%;
   }
 }
 
-.create-account-page, .pagina-crear-cuenta {
+.pagina-crear-cuenta{
   min-height: 92vh;
   padding: 6%;
   display: flex;
@@ -482,7 +480,7 @@ body {
   gap: 6%;
 }
 
-.crear-caja {
+.pagina-crear-cuenta article {
   width: 100%;
   max-width: 540px;
   border: 2px solid #0084DD;
@@ -492,32 +490,24 @@ body {
   text-align: center;
 }
 
-.crear-formulario {
+.pagina-crear-cuenta article form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.crear-campo {
+.pagina-crear-cuenta article div {
   display: flex;
   flex-direction: column;
 }
 
-.crear-entrada {
+.pagina-crear-cuenta article div input {
   border: 2px solid #0084DD;
   border-radius: 14px;
   padding: 16px;
   font-size: 100%;
   color: #0D3B99;
   background-color: #F0F8FF;
-}
-
-.crear-opcion {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 95%;
-  color: #0D3B99;
 }
 
 .crear-casilla {
@@ -532,7 +522,7 @@ body {
     padding-bottom: 12%;
   }
 
-  .crear-caja {
+  .pagina-crear-cuenta article {
     width: 100%;
     padding: 36px 28px;
   }
