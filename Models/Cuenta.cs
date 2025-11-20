@@ -19,4 +19,4 @@ public class Cuenta
     public DateTime FechaRegistro { get; set; }
 
     public Cuenta(){}
-}
+}   
