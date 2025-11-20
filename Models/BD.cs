@@ -114,7 +114,19 @@ static public List<Cancion> GetCanciones()
 
             return usuarioBuscado;
         }
-
+    static public int crearCuenta(string correo, string contraseña, string username, bool terminos, bool actualizaciones){
+        int idCuenta = -1;
+        DateTime fecha = DateTime.Now;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "CrearCuenta";
+            idCuenta = connection.QueryFirstOrDefault<int>(
+                storedProcedure,
+                new{ CorreoElectronico = correo, Contrasenia = contraseña, Username = username, FechaRegistro = fecha, Terminos = terminos, Actualizaciones = actualizaciones},
+                commandType: CommandType.StoredProcedure);
+        }
+        return idCuenta; 
+    }
 }
 
 

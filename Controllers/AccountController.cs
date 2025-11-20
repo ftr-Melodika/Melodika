@@ -66,10 +66,42 @@ public class AccountController : Controller
         return View("CrearCuenta");
     }
 
-        public IActionResult CrearCuentaGuardar(string correo, string contra1, string contra2, string username)
+        public IActionResult CrearCuentaGuardar(string correo, string contra1, string contra2, string username, bool terminos, bool actualizaciones)
     {
+        int idCuenta = -1;
+        
 
-        return View("CrearCuenta");
+        if(contra1 != contra2){
+            ViewBag.mensaje = "Las contraseñas no coinciden";
+            return View("CrearCuenta");
+        }
+        else{
+            string contraseña = contra1;
+            idCuenta = BD.crearCuenta(correo, contraseña, username, terminos, actualizaciones);
+            switch (idCuenta)
+            {
+                case -1:
+                    ViewBag.mensaje = "El correo ya está en uso";
+                    return View("CrearCuenta");
+                    break;
+                case -2:
+                    ViewBag.mensaje = "El nombre de usuario ya está en uso";
+                    return View("CrearCuenta");
+                    break;
+                case -3:
+                    ViewBag.mensaje = "Hubo un error al crear la cuenta";
+                    return View("CrearCuenta");
+                    break;
+                default:
+                    ViewBag.mensaje = "Cuenta creada correctamente";
+                    return RedirectToAction("Login", "Account");
+                    break;
+            }
+            
+
+        }
+
+
     }
 
 

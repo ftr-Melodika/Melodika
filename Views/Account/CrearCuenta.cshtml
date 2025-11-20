@@ -7,20 +7,20 @@
     <article>
         <h1>Crear cuenta</h1>
 
-        <form method="post">
+        <form method="post" action='@Url.Action("CrearCuentaGuardar", "Account")'>
             <div>
                 
-                <input type="email" id="register-email" name="email" placeholder="Correo electronico" autocomplete="email" required />
+                <input type="email" id="register-email" name="correo" placeholder="Correo electronico" autocomplete="email" required />
             </div>
 
             <div>
          
-                <input type="password" id="register-password" name="password" placeholder="Contraseña" autocomplete="new-password" required />
+                <input type="password" id="register-password" name="contra1" placeholder="Contraseña" autocomplete="new-password" required />
             </div>
 
             <div>
         
-                <input type="password" id="register-confirm" name="confirmPassword" placeholder="Confirmar contraseña" autocomplete="new-password" required />
+                <input type="password" id="register-confirm" name="contra2" placeholder="Confirmar contraseña" autocomplete="new-password" required />
             </div>
 
             <div>
@@ -28,17 +28,19 @@
                 <input type="text" id="register-username" name="username" placeholder="Username" autocomplete="username" required />
             </div>
 
-            <label class="crear-opcion" for="terms">
-                <input class="crear-casilla" type="checkbox" id="terms" name="terms" required />
+            <label class="crear-opcion" for="terminos">
+                <input class="crear-casilla" type="checkbox" id="terminos" name="terminos" required />
                 Acepto los términos y condiciones
             </label>
 
-            <label class="crear-opcion" for="updates">
-                <input class="crear-casilla" type="checkbox" id="updates" name="updates" />
+            <label class="crear-opcion" for="actualizaciones">
+                <input class="crear-casilla" type="checkbox" id="actualizaciones" name="actualizaciones" />
                 Quiero recibir información y anuncios de Melodika
             </label>
 
-            <a href='@Url.Action("Login", "Home")' class="accion-primaria"> Crear cuenta e iniciar sesion </a>
+            <button type="submit" class="accion-primaria">Crear cuenta</button>
+
+            <p>@ViewBag.mensaje</p>
         </form>
     </article>
 </section>
