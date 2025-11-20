@@ -672,23 +672,70 @@ body {
   }
 }
 /* Footer EL COPIAR Y PEGAR SALIO MAL POR ESO SE VE ASI*/
-.footer{ display: grid; grid-template-columns: 1fr 1fr; padding: 2% 20%; } 
-.card{ color: white; } 
-.footer div{ align-items: center; width: 80%; } 
-.footerIzq { display: flex; flex-direction: column; } 
-.footerIzq div{ display: flex; align-items: center; margin-top: 2%; } 
-.footerIzq div img{ height: 150px; width: auto; } 
-.footerIzq p{ font-size: larger ; } 
-.redes{ display: flex; justify-content: start; gap: 7%; } 
-.footer{ margin-top: 9%; margin-left: 4%; } 
-.redes img{ width: 32px; height: 32px; object-fit: contain; aspect-ratio: 1 / 1; } 
-.p{ text-align: center; margin-top: 15%; margin-left: 10%; } 
+.footer{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 2% 20%; 
+   } 
+.card{ 
+  color: white; 
+  } 
+.footer div{ 
+  align-items: center; 
+  width: 80%; 
+  } 
+.footerIzq { 
+  display: flex; 
+  flex-direction: column; 
+  } 
+.footerIzq div{ 
+  display: flex; 
+  align-items: center; 
+  margin-top: 2%; 
+  } 
+.footerIzq div img{ 
+  height: 150px; 
+  width: auto; 
+  } 
+.footerIzq p{ 
+  font-size: larger ; 
+  } 
+.redes{ 
+  display: flex; 
+  justify-content: start; 
+  gap: 7%; 
+  } 
+.footer{ 
+  margin-top: 9%; 
+  margin-left: 4%; 
+  } 
+.redes img{ 
+  width: 32px; 
+  height: 32px; 
+  object-fit: contain; 
+  aspect-ratio: 1 / 1; 
+  } 
+.p{ 
+  text-align: center; 
+  margin-top: 15%; 
+  margin-left: 10%; 
+  } 
 /* Ajuste visual: algunos assets (como Spotify) tienen más espacio transparente y se ven más chicos */ 
-.redes img[alt="Spotify"]{ transform: scale(1.18); transform-origin: center; } 
-.footerIzq div h3{ font-size: xx-large; font-weight: 600; } 
-.footerIzq p { width: 100%; margin-top: 6%; } 
+.redes img[alt="Spotify"]{ 
+  transform: scale(1.18); 
+  transform-origin: center; 
+  } 
+.footerIzq div h3{ 
+  font-size: xx-large; 
+  font-weight: 600; 
+  } 
+.footerIzq p { 
+  width: 100%; 
+  margin-top: 6%; 
+  } 
 .footerDer 
-{ display: flex;
+{ 
+  display: flex;
   flex-direction: column;
  align-items: start; 
  justify-content: space-between;
@@ -706,22 +753,56 @@ body {
  /* extra abajo para el copyright */ 
 } 
 /* Izquierda: logo + slogan */
-.footerIzq { text-align: center !important; }
-.footerIzq p { margin-top: 25px !important; /* alinea el slogan a la altura de las apps */ } 
+.footerIzq { 
+  text-align: center !important; 
+  }
+.footerIzq p { 
+  margin-top: 25px !important; /* alinea el slogan a la altura de las apps */ 
+  } 
 /* Derecha: textos + apps todo centrado en columna */ 
-.footerDer { display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 18px !important;
-            margin-top: 15px !important; }
-.footerDer .footerDer { text-align: center !important; }
-footer .card { border: none !important; } 
+.footerDer { 
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin-top: 15px !important; 
+  }
+.footerDer .footerDer { 
+  text-align: center !important; 
+  }
+footer .card { 
+  border: none !important; 
+  } 
 /* Apps centradas debajo de "Ayuda" */ 
-.redes { display: flex !important; justify-content: center !important; gap: 16px !important; margin-left: 19%; }
-.redes img { width: 32px !important; height: 32px !important; } 
+.redes { 
+  display: flex !important; 
+  justify-content: center !important; 
+  gap: 16px !important; 
+  margin-left: 19%; 
+  }
+.redes img { 
+  width: 32px !important; 
+  height: 32px !important; 
+  } 
 /* Línea horizontal arriba del copyright */
-.footer::after { content: "" !important; position: absolute !important; left: 10% !important; right: 10% !important; bottom: 40px !important; height: 1px !important; background: rgba(255, 255, 255, 0.7) !important; } 
-/* Copyright centrado debajo de la línea */ .footer > p:last-child { position: absolute !important; bottom: 1px !important; left: 50% !important; transform: translateX(-50%) !important; font-size: 14px !important; opacity: 0.9 !important; } 
+.footer::after { 
+  content: "" !important; 
+  position: absolute !important; 
+  left: 10% !important; 
+  right: 10% !important; 
+  bottom: 40px !important; 
+  height: 1px !important; 
+  background: rgba(255, 255, 255, 0.7) !important; 
+  } 
+/* Copyright centrado debajo de la línea */ 
+.footer > p:last-child { 
+  position: absolute !important; 
+  bottom: 1px !important; 
+  left: 50% !important; 
+  transform: translateX(-50%) !important; 
+  font-size: 14px !important; 
+  opacity: 0.9 !important; 
+  } 
 .footerIzq p { font-size: 22px !important; }
 
 /* Canciones populares */
