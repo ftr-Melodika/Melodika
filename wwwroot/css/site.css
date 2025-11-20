@@ -800,139 +800,134 @@ body {
     width: 85%;
   }
 }
-/* Footer EL COPIAR Y PEGAR SALIO MAL POR ESO SE VE ASI*/
-.footer{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   padding: 2% 20%; 
-   } 
-.card{ 
-  color: white; 
-  } 
-.footer div{ 
-  align-items: center; 
-  width: 80%; 
-  } 
-.footerIzq { 
-  display: flex; 
-  flex-direction: column; 
-  } 
-.footerIzq div{ 
-  display: flex; 
-  align-items: center; 
-  margin-top: 2%; 
-  } 
-.footerIzq div img{ 
-  height: 150px; 
-  width: auto; 
-  } 
-.footerIzq p{ 
-  font-size: larger ; 
-  } 
-.redes{ 
-  display: flex; 
-  justify-content: start; 
-  gap: 7%; 
-  } 
-.footer{ 
-  margin-top: 9%; 
-  margin-left: 4%; 
-  } 
-.redes img{ 
-  width: 32px; 
-  height: 32px; 
-  object-fit: contain; 
-  aspect-ratio: 1 / 1; 
-  } 
-.p{ 
-  text-align: center; 
-  margin-top: 15%; 
-  margin-left: 10%; 
-  } 
-/* Ajuste visual: algunos assets (como Spotify) tienen más espacio transparente y se ven más chicos */ 
-.redes img[alt="Spotify"]{ 
-  transform: scale(1.18); 
-  transform-origin: center; 
-  } 
-.footerIzq div h3{ 
-  font-size: xx-large; 
-  font-weight: 600; 
-  } 
-.footerIzq p { 
-  width: 100%; 
-  margin-top: 6%; 
-  } 
-.footerDer 
-{ 
+/* FOOTER */
+
+/* Contenedor principal: logo a la izq, links a la der */
+.footer {
+  position: relative !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 40px 10% 70px !important; /* extra abajo para el copyright */
+  margin-top: 9%;
+  margin-left: 4%;
+}
+
+/* Card dentro del footer */
+.card {
+  color: white;
+}
+footer .card {
+  border: none !important;
+}
+
+/* Divs internos del footer */
+.footer div {
+  align-items: center;
+  width: 80%;
+}
+
+/* Izquierda: logo + slogan */
+.footerIzq {
   display: flex;
   flex-direction: column;
- align-items: start; 
- justify-content: space-between;
- gap: 20px; 
- font-size: larger;
- margin-left: auto;
-} 
-/* Contenedor principal: logo a la izq, links a la der */ 
-.footer 
-{ position: relative !important;
-  display: flex !important;
- justify-content: space-between !important;
- align-items: center !important;
- padding: 40px 10% 70px !important;
- /* extra abajo para el copyright */ 
-} 
-/* Izquierda: logo + slogan */
-.footerIzq { 
-  text-align: center !important; 
-  }
-.footerIzq p { 
-  margin-top: 25px !important; /* alinea el slogan a la altura de las apps */ 
-  } 
-/* Derecha: textos + apps todo centrado en columna */ 
-.footerDer { 
+  text-align: center !important;
+}
+
+.footerIzq div {
+  display: flex;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.footerIzq div img {
+  height: 150px;
+  width: auto;
+}
+
+.footerIzq div h3 {
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.footerIzq p {
+  width: 100%;
+  margin-top: 25px !important; /* alinea el slogan a la altura de las apps */
+  font-size: 26px !important;
+}
+
+/* Derecha: textos + apps en columna */
+.footerDer {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: space-between;
   gap: 18px !important;
-  margin-top: 15px !important; 
-  }
-.footerDer .footerDer { 
-  text-align: center !important; 
-  }
-footer .card { 
-  border: none !important; 
-  } 
-/* Apps centradas debajo de "Ayuda" */ 
-.redes { 
-  display: flex !important; 
-  justify-content: center !important; 
-  gap: 16px !important; 
-  margin-left: 19%; 
-  }
-.redes img { 
-  width: 32px !important; 
-  height: 32px !important; 
-  } 
+  font-size: larger;
+  margin-left: auto;
+}
+
+.footerDer .footerDer {
+  text-align: center !important;
+  font-size: 25px;
+  margin: auto;
+}
+
+/* Redes sociales */
+.redes {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-right: 2%;
+}
+
+.redes img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+/* Ajuste visual Spotify */
+.redes img[alt="Spotify"] {
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+/* Clase auxiliar .p (por si la usás en el footer) */
+.p {
+  text-align: center;
+  margin-top: 15%;
+  margin-left: 10%;
+}
+
 /* Línea horizontal arriba del copyright */
-.footer::after { 
-  content: "" !important; 
-  position: absolute !important; 
-  left: 10% !important; 
-  right: 10% !important; 
-  bottom: 40px !important; 
-  height: 1px !important; 
-  background: rgba(255, 255, 255, 0.7) !important; 
-  } 
-/* Copyright centrado debajo de la línea */ 
-.footer > p:last-child { 
-  position: absolute !important; 
-  bottom: 1px !important; 
-  left: 50% !important; 
-  transform: translateX(-50%) !important; 
-  font-size: 14px !important; 
-  opacity: 0.9 !important; 
-  } 
-.footerIzq p { font-size: 22px !important; }
+.footer::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 10% !important;
+  right: 10% !important;
+  bottom: 40px !important;
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Copyright centrado debajo de la línea */
+.footer > p:last-child {
+  position: absolute !important;
+  bottom: -20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  font-size: 14px !important;
+  opacity: 0.9 !important;
+}
+
+/* Tipografía y borde general del footer */
+footer {
+  font-size: 24px !important;
+  border: none !important;
+}
+
 
 /* Canciones populares */
 .Canciones-populares {
@@ -1094,73 +1089,6 @@ footer .card {
   background-color: #fff !important;
 }
 
-
-/* Contenedor principal: logo a la izq, links a la der */
-.footer {
-  position: relative !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 40px 10% 70px !important; /* extra abajo para el copyright */
-}
-
-/* Izquierda: logo + slogan */
-.footerIzq {
-  text-align: center !important;
-}
-
-.footerIzq p {
-  margin-top: 25px !important; /* alinea el slogan a la altura de las apps */
-}
-
-/* Derecha: textos + apps todo centrado en columna */
-.footerDer {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 18px !important;
-}
-
-.footerDer .footerDer {
-  text-align: center !important;
-}
-
-/* Apps centradas debajo de "Ayuda" */
-.redes {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 16px !important;
-}
-
-.redes img {
-  width: 32px !important;
-  height: 32px !important;
-}
-
-/* Línea horizontal arriba del copyright */
-.footer::after {
-  content: "" !important;
-  position: absolute !important;
-  left: 10% !important;
-  right: 10% !important;
-  bottom: 40px !important;
-  height: 1px !important;
-  background: rgba(255, 255, 255, 0.7) !important;
-}
-
-/* Copyright centrado debajo de la línea */
-.footer > p:last-child {
-  position: absolute !important;
-  bottom: 0px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  font-size: 14px !important;
-  opacity: 0.9 !important;
-}
-footer {
-  font-size: 24px !important;
-  border: none !important;
-}
 
 
 /*Cursos*/

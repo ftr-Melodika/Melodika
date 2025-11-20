@@ -2455,23 +2455,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\48802641\\.nuget\\packages\\": {},
+    "C:\\Users\\49378703\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48802641\\Melodika\\Melodika.csproj",
+      "projectUniqueName": "C:\\Users\\49378703\\Desktop\\Melodika\\Melodika.csproj",
       "projectName": "Melodika",
-      "projectPath": "C:\\Users\\48802641\\Melodika\\Melodika.csproj",
-      "packagesPath": "C:\\Users\\48802641\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48802641\\Melodika\\obj\\",
+      "projectPath": "C:\\Users\\49378703\\Desktop\\Melodika\\Melodika.csproj",
+      "packagesPath": "C:\\Users\\49378703\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\49378703\\Desktop\\Melodika\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\48802641\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\49378703\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2497,7 +2497,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -2539,7 +2540,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
