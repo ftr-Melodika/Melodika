@@ -1,33 +1,37 @@
+@using melodika.Models;
+@using System.Collections.Generic;
 @{
     ViewData["Title"] = "MostrarUsuario";
+    List<Usuario> usuarios = ViewBag.usuarios as List<Usuario> ?? new List<Usuario>();
 }
 
    <main class="contenido-principal">
 
    <section>  
-@*
-      <a class="links" href='@Url.Action("Cursos", "Home")'>
+@if (usuarios.Count > 0)
+{
+    int maxUsuarios = 3;
+    int i = 0;
+    while (i < maxUsuarios && i < usuarios.Count)
+    {
+
+      Usuario usuario = usuarios[i];
+      <a class="links" href='@Url.Action("SeleccionarUsuario", "Account", new { idUsuario = usuario.IdUsuario })'>
           <article class="usuario-tarjeta">
-          
-            <div class="usuario-circulo">
-              <img src="../imagenes/camara2.png" alt="icono usuario uno">
-            </div>
-            
-            <p>Usuario uno</p>
-            
+              <div class="usuario-circulo">
+                  <img src="" alt="Foto de @usuario.Nombre">
+              </div>
+              <p>@usuario.Nombre</p>
           </article>
       </a>
-      <a class="links" href='@Url.Action("Cursos", "Home")'> 
-            <article class="usuario-tarjeta">
-              <div class="usuario-circulo">
-                <img src="../imagenes/camara2.png" alt="icono usuario dos">
-              </div>
-              
-              <p>Usuario dos</p>
-            </article>
-      </a>
+      i++;
+    }
+}
+else
+{
+    <p>No hay usuarios disponibles para esta cuenta.</p>
+}
 
-       *@
       <a class="links" href='@Url.Action("CrearUsuario", "Account")'> 
             <article class="usuario-tarjeta">
               <div class="usuario-circulo">

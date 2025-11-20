@@ -104,6 +104,17 @@ static public List<Cancion> GetCanciones()
             return usuarios;
         }
 
+        static public Usuario GetUsuarioSimple(int idUsuario){
+            Usuario usuarioBuscado = new Usuario();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string storedProcedure = "GetUsuarioSimple";
+                usuarioBuscado = connection.QueryFirstOrDefault<Usuario>(storedProcedure,new{ idUsuario = idUsuario },commandType: CommandType.StoredProcedure);
+            }
+
+            return usuarioBuscado;
+        }
+
 }
 
 

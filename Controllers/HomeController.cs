@@ -46,10 +46,16 @@ public class HomeController : Controller
 
     public IActionResult Cursos()
     {
-        List<Curso> cursos = new List<Curso>();
-        cursos = BD.getCursos();
-        ViewBag.cursos = cursos;
-        return View("Cursos");
+        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));//Saca de sesion
+        if (cuenta == null){
+            return RedirectToAction("Login", "Account");
+        }
+        else{
+            List<Curso> cursos = new List<Curso>();
+            cursos = BD.getCursos();
+            ViewBag.cursos = cursos;
+            return View("Cursos");
+        }
     }
 
 
