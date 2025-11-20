@@ -601,16 +601,20 @@ body {
 .SeccionCursos {
   display: flex;
   justify-content: center;
-  gap: 34px;
-  flex-wrap: wrap;
+  gap: 96px;
   padding: 0 6% 8%;
+  width: min(1600px, 100%);
+  margin: 0 auto;
   font-family: "Poppins", sans-serif;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
 }
 
 .SeccionCursos > div {
-  width: min(300px, 92vw);
-  min-height: 260px;
-  padding: 26px;
+  width: min(340px, 94vw);
+  min-height: 230px;
+  padding: 24px 28px;
   border-radius: 18px;
   border: 1px solid rgba(120, 130, 150, 0.35);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
@@ -625,16 +629,10 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.4;
+  filter: blur(6px);
+  transform: scale(1.08);
+  opacity: 0.9;
   z-index: 0;
-}
-
-.SeccionCursos > div::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(17, 25, 40, 0.22), rgba(17, 25, 40, 0.38));
-  z-index: 1;
 }
 
 .SeccionCursos > div:nth-child(1)::before { background-image: url("/imagenes/link1.png"); }
@@ -644,28 +642,36 @@ body {
 
 .SeccionCursos > div > * {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .SeccionCursos > div h1 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #ffffff;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
 .SeccionCursos > div p {
   color: #f4f6fb;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 550;
   margin: 0;
+  text-align: center;
+}
+
+.SeccionCursos > div {
+  scroll-snap-align: center;
 }
 
 @media (max-width: 640px) {
   .SeccionCursos {
-    gap: 20px;
+    gap: 24px;
+    padding: 0 4% 10%;
   }
 
   .SeccionCursos > div {
-    width: 100%;
+    width: min(320px, 90vw);
     min-height: auto;
     padding: 22px;
   }
