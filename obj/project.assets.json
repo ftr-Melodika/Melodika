@@ -2455,24 +2455,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\49378703\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Federico\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\49378703\\Desktop\\Melodika\\Melodika.csproj",
+      "projectUniqueName": "C:\\Users\\Federico\\Desktop\\Colegio\\MELODIKA\\Melodika\\Melodika.csproj",
       "projectName": "Melodika",
-      "projectPath": "C:\\Users\\49378703\\Desktop\\Melodika\\Melodika.csproj",
-      "packagesPath": "C:\\Users\\49378703\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\49378703\\Desktop\\Melodika\\obj\\",
+      "projectPath": "C:\\Users\\Federico\\Desktop\\Colegio\\MELODIKA\\Melodika\\Melodika.csproj",
+      "packagesPath": "C:\\Users\\Federico\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Federico\\Desktop\\Colegio\\MELODIKA\\Melodika\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\49378703\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Federico\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2497,8 +2492,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -2540,7 +2534,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

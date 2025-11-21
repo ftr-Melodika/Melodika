@@ -66,7 +66,7 @@ public class AccountController : Controller
         return View("CrearCuenta");
     }
 
-        public IActionResult CrearCuentaGuardar(string correo, string contra1, string contra2, string username, bool terminos, bool actualizaciones)
+    public IActionResult CrearCuentaGuardar(string correo, string contra1, string contra2, string username, bool terminos, bool actualizaciones)
     {
         int idCuenta = -1;
         
@@ -109,6 +109,13 @@ public class AccountController : Controller
     {
         return View("CrearUsuario");
     }
+
+    public IActionResult CrearUsuarioGuardar(string nombre, DateTime fechaNacimiento, string genero)
+    {
+        return View("CrearUsuario");
+    }
+
+
 
     public IActionResult MostrarUsuario()
     {
