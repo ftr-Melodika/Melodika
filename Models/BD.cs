@@ -92,6 +92,20 @@ static public List<Cancion> GetCanciones()
         return cursos;
     }
 
+    static public Curso getCursoPorId(int idCurso)
+    {
+        Curso curso = null;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "GetCursoPorId";
+            curso = connection.QueryFirstOrDefault<Curso>(
+                storedProcedure,
+                new { IdCurso = idCurso },
+                commandType: CommandType.StoredProcedure);
+        }
+        return curso;
+    }
+
         static public List<Usuario> GetUsuariosCuentaSimple(int idCuenta){
             List<Usuario> usuarios = new List<Usuario>();
             
@@ -142,11 +156,11 @@ static public List<Cancion> GetCanciones()
     }
 
     static public int AgregarInstrumentoUsuario(int idUsuario, int idInstrumento){
-        int idInstrumento = -1;
+        int reporte = -1;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string storedProcedure = "AgregarInstrumentoUsuario";
-            idInstrumento = connection.QueryFirstOrDefault<int>(
+            reporte = connection.QueryFirstOrDefault<int>(
                 storedProcedure,
                 new{IdUsuario = idUsuario, IdInstrumento = idInstrumento},
                 commandType: CommandType.StoredProcedure);

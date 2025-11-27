@@ -9,10 +9,12 @@
 <section class = "SeccionCursos">
     @foreach (Curso curso in ViewBag.cursos)
     {
-        <div>
-            <h1>@curso.TituloCurso</h1>
-            <p>@curso.Descripcion</p>  
-               
-        </div>  
+        <a href='@Url.Action("CursoAdentro", "Home", new { id = curso.IdCurso })' class="curso-link">
+            <div class="curso-item">
+                <h2>@curso.TituloCurso</h2>
+                <p>@curso.Descripcion</p>
+                <p class="instrumento">Instrumento: @curso.nombreInstrumento</p>
+            </div>
+        </a>
     }
 </section>
