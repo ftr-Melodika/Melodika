@@ -621,46 +621,36 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.SeccionCursos div::before {
-  position: absolute;
-  inset: 0;
+  scroll-snap-align: center;
+  
   background-size: cover;
   background-position: center;
-  filter: blur(6px);/** Borroso **/
-  transform: scale(1.08);
-  opacity: 0.9;
-  z-index: 0;
+  background-repeat: no-repeat;
 }
 
-.SeccionCursos div:nth-child(1)::before { background-image: url("/imagenes/link1.png"); }
-.SeccionCursos div:nth-child(2)::before { background-image: url("/imagenes/link2.png"); }
-.SeccionCursos div:nth-child(3)::before { background-image: url("/imagenes/link3.png"); }
-.SeccionCursos div:nth-child(4)::before { background-image: url("/imagenes/link4.png"); }
+.SeccionCursos div:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/imagenes/link1.png"); }
+.SeccionCursos div:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/imagenes/link2.png"); }
+.SeccionCursos div:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/imagenes/link3.png"); }
+.SeccionCursos div:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/imagenes/link4.png"); }
 
 .SeccionCursos div * {
   position: relative;
   z-index: 1;
 }
 
-.SeccionCursos div h1 {
+.SeccionCursos h1 {
   font-size: 1.25rem;
   color: #ffffff;
   font-weight: 700;
   margin-bottom: 12px;
 }
 
-.SeccionCursos div p {
+.SeccionCursos p {
   color: #f4f6fb;
   font-size: 1rem;
   font-weight: 550;
   margin: 0;
   text-align: center;
-}
-
-.SeccionCursos div {
-  scroll-snap-align: center;
 }
 
 @media (max-width: 640px) {
