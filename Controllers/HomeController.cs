@@ -46,7 +46,10 @@ public class HomeController : Controller
 
     public IActionResult Cursos()
     {
+
         Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));//Saca de sesion
+        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        List<Instrumento> instrumentos = BD.GetInstrumetnos(usuario.IdUsuario);
         if (cuenta == null){
             return RedirectToAction("Login", "Account");
         }

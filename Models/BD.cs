@@ -154,6 +154,16 @@ static public List<Cancion> GetCanciones()
         return idInstrumento;
     }
 
+    static public List<Instrumento> GetInstrumetnos(int idUsuario){
+        List<Instrumento> instrumentos = new List<Instrumento>();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "GetInstrumetnos";
+            instrumentos = connection.Query<Instrumento>(storedProcedure, new{idUsuario = idUsuario}, commandType: CommandType.StoredProcedure).ToList();
+        }
+        return instrumentos;
+    }
+
 }
 
 
