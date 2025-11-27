@@ -141,6 +141,19 @@ static public List<Cancion> GetCanciones()
         return idUsuario;
     }
 
+    static public int AgregarInstrumentoUsuario(int idUsuario, int idInstrumento){
+        int idInstrumento = -1;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "AgregarInstrumentoUsuario";
+            idInstrumento = connection.QueryFirstOrDefault<int>(
+                storedProcedure,
+                new{IdUsuario = idUsuario, IdInstrumento = idInstrumento},
+                commandType: CommandType.StoredProcedure);
+        }
+        return idInstrumento;
+    }
+
 }
 
 

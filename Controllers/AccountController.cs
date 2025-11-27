@@ -164,6 +164,31 @@ public class AccountController : Controller
         //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
     }
 
+    public IActionResult SeleccionarInstrumento()
+    {
+        return View("SeleccionarInstrumento");
+    }
+
+    public IActionResult SeleccionarInstrumentoGuardar(int idInstrumento)
+    {
+        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        int idUsuario = usuario.IdUsuario;
+        int idInstrumento = BD.AgregarInstrumentoUsuario(idUsuario, idInstrumento);
+        switch(idInstrumento){
+            case -1:
+                ViewBag.mensaje = "No hay un usuario seleccionado";
+                return View("SeleccionarInstrumento");
+
+            case -2:
+                ViewBag.mensaje = "Algo salio mal.";
+                return View("SeleccionarInstrumento");
+
+            default:
+                ViewBag.mensaje = "Instrumento seleccionado correctamente";
+                return View("SeleccionarInstrumento");
+        }
+    }
+
     public IActionResult logout()
     {
 
