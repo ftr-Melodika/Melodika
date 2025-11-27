@@ -127,6 +127,20 @@ static public List<Cancion> GetCanciones()
         }
         return idCuenta; 
     }
+
+    static public int crearUsuario(string nombre, DateTime fechaNacimiento, string genero, int idCuenta){
+        int idUsuario = -1;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "CrearUsuario";
+            idUsuario = connection.QueryFirstOrDefault<int>(
+                storedProcedure,
+                new{Nombre = nombre, Genero = genero, FechaNacimiento = fechaNacimiento, IdCuenta = idCuenta},
+                commandType: CommandType.StoredProcedure);
+        }
+        return idUsuario;
+    }
+
 }
 
 

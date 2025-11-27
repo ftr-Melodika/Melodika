@@ -112,7 +112,27 @@ public class AccountController : Controller
 
     public IActionResult CrearUsuarioGuardar(string nombre, DateTime fechaNacimiento, string genero)
     {
-        return View("CrearUsuario");
+        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+        int idCuenta = cuenta.IdCuenta;
+        int idUsuario = BD.crearUsuario(nombre, fechaNacimiento, genero, idCuenta);
+        switch(idUsuario){
+            case -1:
+                ViewBag.mensaje = "Ya hay un usuario con ese nombre";
+                return View("CrearUsuario");
+
+
+            case -2:
+                ViewBag.mensaje = "Algo salio mal.";
+                return View("CrearUsuario");
+
+
+            default:
+                ViewBag.mensaje = "Usuario creado correctamente";
+                return RedirectToAction("MostrarUsuario", "Account");
+
+        }
+
+        
     }
 
 
@@ -141,6 +161,7 @@ public class AccountController : Controller
             return RedirectToAction("MostrarUsuario", "Account");
             ViewBag.mensaje = "No hay usuarios disponibles para esta cuenta";
         }
+        //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
     }
 
     public IActionResult logout()
