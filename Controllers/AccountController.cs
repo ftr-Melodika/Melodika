@@ -173,7 +173,7 @@ public class AccountController : Controller
     {
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         int idUsuario = usuario.IdUsuario;
-        int idInstrumento = BD.AgregarInstrumentoUsuario(idUsuario, idInstrumento);
+        int reporte = BD.AgregarInstrumentoUsuario(idUsuario, idInstrumento);
         switch(idInstrumento){
             case -1:
                 ViewBag.mensaje = "No hay un usuario seleccionado";

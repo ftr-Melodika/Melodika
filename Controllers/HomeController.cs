@@ -50,7 +50,6 @@ public class HomeController : Controller
         if (cuenta == null){
             return RedirectToAction("Login", "Account");
         }
-        else if()
         else{
             List<Curso> cursos = new List<Curso>();
             cursos = BD.getCursos();
@@ -74,6 +73,23 @@ public class HomeController : Controller
        public IActionResult Contactos()
     {
         return View("Contactos");
+    }
+
+    public IActionResult CursoAdentro(int id)
+    {
+        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+        if (cuenta == null)
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
+        Curso curso = BD.getCursoPorId(id);
+        if (curso == null)
+        {
+            return RedirectToAction("Cursos");
+        }
+
+        return View("CursoAdentro", curso);
     }
 
     public IActionResult Feedback()
