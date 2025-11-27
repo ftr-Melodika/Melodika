@@ -50,6 +50,7 @@ public class HomeController : Controller
         if (cuenta == null){
             return RedirectToAction("Login", "Account");
         }
+        else if()
         else{
             List<Curso> cursos = new List<Curso>();
             cursos = BD.getCursos();

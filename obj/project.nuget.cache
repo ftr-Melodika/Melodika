@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "QEhNhZIZgAA=",
   "success": true,
   "projectFilePath": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
-=======
-  "dgSpecHash": "aSXc54p0TdbsE+4aDmRaVPN7Z6HFlkrWpSKPsLwfFjgz4GIjfFBPjn6QPtBeZQkUHehG5A5/ibgrqlFa+/4mVw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\49009466\\Downloads\\Melodika\\Melodika\\Melodika.csproj",
->>>>>>> eb6bcfb48a1a1b12dba458eb3b0176d4b1a67011
   "expectedPackageFiles": [
     "C:\\Users\\49092806\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\49092806\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

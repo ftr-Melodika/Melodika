@@ -2461,19 +2461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
       "projectName": "Melodika",
       "projectPath": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
       "packagesPath": "C:\\Users\\49092806\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\49092806\\Downloads\\Melodika\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\49009466\\Downloads\\Melodika\\Melodika\\Melodika.csproj",
-      "projectName": "Melodika",
-      "projectPath": "C:\\Users\\49009466\\Downloads\\Melodika\\Melodika\\Melodika.csproj",
-      "packagesPath": "C:\\Users\\49009466\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\49009466\\Downloads\\Melodika\\Melodika\\obj\\",
->>>>>>> eb6bcfb48a1a1b12dba458eb3b0176d4b1a67011
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
