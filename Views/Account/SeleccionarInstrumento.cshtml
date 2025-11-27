@@ -1,0 +1,136 @@
+@{
+    ViewData["Title"] = "Seleccionar Instrumento";
+}
+
+<div class="container py-5">
+    <h1 class="text-center mb-5">Elegí tu instrumento</h1>
+    
+    <div class="row justify-content-center g-4">
+        <!-- Guitarra -->
+        <div class="col-md-5 col-lg-3">
+            <div class="instrument-card" onclick="seleccionarInstrumento('guitarra')">
+                <div class="instrument-img-container">
+                    <img src="/imagenes/guitar-icon.png" alt="Guitarra" class="instrument-img">
+                </div>
+                <div class="instrument-overlay">
+                    <h3>Guitarra</h3>
+                    <p>Domina las cuerdas y crea melodías cautivadoras</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Piano -->
+        <div class="col-md-5 col-lg-3">
+            <div class="instrument-card" onclick="seleccionarInstrumento('piano')">
+                <div class="instrument-img-container">
+                    <img src="/imagenes/piano-icon.png" alt="Piano" class="instrument-img">
+                </div>
+                <div class="instrument-overlay">
+                    <h3>Piano</h3>
+                    <p>Explora el mundo de las teclas y las armonías</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Violín -->
+        <div class="col-md-5 col-lg-3">
+            <div class="instrument-card" onclick="seleccionarInstrumento('violin')">
+                <div class="instrument-img-container">
+                    <img src="/imagenes/violin-icon.png" alt="Violín" class="instrument-img">
+                </div>
+                <div class="instrument-overlay">
+                    <h3>Violín</h3>
+                    <p>Descubre la elegancia del sonido del violín</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ukelele -->
+        <div class="col-md-5 col-lg-3">
+            <div class="instrument-card" onclick="seleccionarInstrumento('ukelele')">
+                <div class="instrument-img-container">
+                    <img src="/imagenes/ukulele-icon.png" alt="Ukelele" class="instrument-img">
+                </div>
+                <div class="instrument-overlay">
+                    <h3>Ukelele</h3>
+                    <p>Disfruta de la alegría de tocar este instrumento versátil</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .instrument-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        position: relative;
+    }
+
+    .instrument-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 132, 221, 0.2);
+    }
+
+    .instrument-img-container {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    .instrument-img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .instrument-card:hover .instrument-img {
+        transform: scale(1.05);
+    }
+
+    .instrument-overlay {
+        padding: 20px;
+        text-align: center;
+        background: white;
+    }
+
+    .instrument-overlay h3 {
+        color: #0D3B99;
+        margin-bottom: 10px;
+        font-family: 'ArsenicaTrial', Georgia, serif;
+    }
+
+    .instrument-overlay p {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    h1 {
+        color: #0D3B99;
+        font-family: 'ArsenicaTrial', Georgia, serif;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+    function seleccionarInstrumento(instrumento) {
+        // Aquí puedes agregar la lógica para manejar la selección del instrumento
+        console.log('Instrumento seleccionado:', instrumento);
+        // Ejemplo de redirección (ajusta según tu ruta)
+        // window.location.href = `/Aprender/${instrumento}`;
+        
+        // Muestra un mensaje temporal (puedes personalizar esto)
+        const mensaje = `¡Has seleccionado ${instrumento.charAt(0).toUpperCase() + instrumento.slice(1)}!`;
+        alert(mensaje);
+    }
+</script>
