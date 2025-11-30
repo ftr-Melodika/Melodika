@@ -158,8 +158,8 @@ public class AccountController : Controller
         }
         else
         {
-            return RedirectToAction("MostrarUsuario", "Account");
             ViewBag.mensaje = "No hay usuarios disponibles para esta cuenta";
+            return RedirectToAction("MostrarUsuario", "Account");
         }
         //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
     }
@@ -174,7 +174,7 @@ public class AccountController : Controller
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         int idUsuario = usuario.IdUsuario;
         int reporte = BD.AgregarInstrumentoUsuario(idUsuario, idInstrumento);
-        switch(idInstrumento){
+        switch(reporte){
             case -1:
                 ViewBag.mensaje = "No hay un usuario seleccionado";
                 return View("SeleccionarInstrumento");

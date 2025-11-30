@@ -4,14 +4,14 @@
 
 <section class="crear-usuario">
   <h2>Crear usuario</h2>
-  <form>
-    <input type="text" placeholder="Nombre de usuario" required>
-    <input type="date" placeholder="Fecha de nacimiento" required>
-    <select>
+  <form action="/Account/CrearUsuarioGuardar" method="post">
+    <input type="text" name="nombre" placeholder="Nombre de usuario" required>
+    <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento" required>
+    <select name="genero">
       <option value="" disabled selected>Género (opcional)</option>
-      <option value="masculino">Masculino</option>
-      <option value="femenino">Femenino</option>
-      <option value="no-binario">No binario</option>
+      <option value="M">Masculino</option>
+      <option value="F">Femenino</option>
+      <option value="NB">No binario</option>
     </select>
     <button type="submit">Crear usuario</button>
     <p> @ViewBag.mensaje; </p>

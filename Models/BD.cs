@@ -7,7 +7,7 @@ using System.Linq;
 using System.Data;
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost; DataBase = Melodika_DB; Trusted_Connection = true; TrustServerCertificate = true";
+    private static string _connectionString = @"Server=localHost; DataBase = Melodika_DB; Trusted_Connection = true; TrustServerCertificate = true";
 
 /*
 static public List<Cancion> seleccionarCancion()
@@ -172,7 +172,7 @@ static public List<Cancion> GetCanciones()
         List<Instrumento> instrumentos = new List<Instrumento>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string storedProcedure = "GetInstrumetnos";
+            string storedProcedure = "getInstrumentos";
             instrumentos = connection.Query<Instrumento>(storedProcedure, new{idUsuario = idUsuario}, commandType: CommandType.StoredProcedure).ToList();
         }
         return instrumentos;

@@ -6,60 +6,72 @@
     <h1 class="text-center mb-5">Elegí tu instrumento</h1>
     
     <div class="row justify-content-center g-4">
-        <!-- Guitarra -->
+        
         <div class="col-md-5 col-lg-3">
-            <div class="instrument-card" onclick="seleccionarInstrumento('guitarra')">
-                <div class="instrument-img-container">
-                    <img src="/imagenes/guitar-icon.png" alt="Guitarra" class="instrument-img">
+            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 1 })" class="text-decoration-none text-dark">
+                <div class="instrument-card">
+                    <div class="instrument-img-container">
+                        <img src="/imagenes/guitar-icon.png" alt="Guitarra" class="instrument-img">
+                    </div>
+                    <div class="instrument-overlay">
+                        <h3>Guitarra</h3>
+                        <p>Domina las cuerdas y crea melodías cautivadoras</p>
+                    </div>
                 </div>
-                <div class="instrument-overlay">
-                    <h3>Guitarra</h3>
-                    <p>Domina las cuerdas y crea melodías cautivadoras</p>
-                </div>
-            </div>
+            </a>
         </div>
 
-        <!-- Piano -->
         <div class="col-md-5 col-lg-3">
-            <div class="instrument-card" onclick="seleccionarInstrumento('piano')">
-                <div class="instrument-img-container">
-                    <img src="/imagenes/piano-icon.png" alt="Piano" class="instrument-img">
+            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 2 })" class="text-decoration-none text-dark">
+                <div class="instrument-card">
+                    <div class="instrument-img-container">
+                        <img src="/imagenes/piano-icon.png" alt="Piano" class="instrument-img">
+                    </div>
+                    <div class="instrument-overlay">
+                        <h3>Piano</h3>
+                        <p>Explora el mundo de las teclas y las armonías</p>
+                    </div>
                 </div>
-                <div class="instrument-overlay">
-                    <h3>Piano</h3>
-                    <p>Explora el mundo de las teclas y las armonías</p>
-                </div>
-            </div>
+            </a>
         </div>
 
-        <!-- Violín -->
         <div class="col-md-5 col-lg-3">
-            <div class="instrument-card" onclick="seleccionarInstrumento('violin')">
-                <div class="instrument-img-container">
-                    <img src="/imagenes/violin-icon.png" alt="Violín" class="instrument-img">
+            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 3 })" class="text-decoration-none text-dark">
+                <div class="instrument-card">
+                    <div class="instrument-img-container">
+                        <img src="/imagenes/violin-icon.png" alt="Violín" class="instrument-img">
+                    </div>
+                    <div class="instrument-overlay">
+                        <h3>Violín</h3>
+                        <p>Descubre la elegancia del sonido del violín</p>
+                    </div>
                 </div>
-                <div class="instrument-overlay">
-                    <h3>Violín</h3>
-                    <p>Descubre la elegancia del sonido del violín</p>
-                </div>
-            </div>
+            </a>
         </div>
 
-        <!-- Ukelele -->
         <div class="col-md-5 col-lg-3">
-            <div class="instrument-card" onclick="seleccionarInstrumento('ukelele')">
-                <div class="instrument-img-container">
-                    <img src="/imagenes/ukulele-icon.png" alt="Ukelele" class="instrument-img">
+            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 4 })" class="text-decoration-none text-dark">
+                <div class="instrument-card">
+                    <div class="instrument-img-container">
+                        <img src="/imagenes/ukulele-icon.png" alt="Ukelele" class="instrument-img">
+                    </div>
+                    <div class="instrument-overlay">
+                        <h3>Ukelele</h3>
+                        <p>Disfruta de la alegría de tocar este instrumento versátil</p>
+                    </div>
                 </div>
-                <div class="instrument-overlay">
-                    <h3>Ukelele</h3>
-                    <p>Disfruta de la alegría de tocar este instrumento versátil</p>
-                </div>
-            </div>
+            </a>
         </div>
+
     </div>
+    
+    @if(ViewBag.mensaje != null)
+    {
+        <div class="alert alert-info text-center mt-3">
+            @ViewBag.mensaje
+        </div>
+    }
 </div>
-
 <style>
     .instrument-card {
         background: white;

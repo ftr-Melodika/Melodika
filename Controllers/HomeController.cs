@@ -54,10 +54,16 @@ public class HomeController : Controller
             return RedirectToAction("Login", "Account");
         }
         else{
-            List<Curso> cursos = new List<Curso>();
-            cursos = BD.getCursos();
-            ViewBag.cursos = cursos;
-            return View("Cursos");
+            if(instrumentos.Count == 0){
+                ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
+                return View("SeleccionarInstrumento");
+            }
+            else{            
+                List<Curso> cursos = BD.getCursos();
+                ViewBag.cursos = cursos;
+                return View("Cursos");
+            }
+
         }
     }
 
