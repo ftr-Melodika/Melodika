@@ -56,7 +56,7 @@ public class HomeController : Controller
         else{
             if(instrumentos.Count == 0){
                 ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
-                return View("SeleccionarInstrumento");
+                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
             }
             else{            
                 List<Curso> cursos = BD.getCursos();
