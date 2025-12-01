@@ -12,3 +12,10 @@ function seleccionarInstrumento(instrumento) {
         const mensaje = `¡Has seleccionado ${instrumento.charAt(0).toUpperCase() + instrumento.slice(1)}!`;
         alert(mensaje);
     }
+
+// Toggle menu function
+function toggleMenu() {
+    // Add menu toggle functionality here
+    console.log("Menu toggled");
+    // You can add your menu toggle logic here
+}

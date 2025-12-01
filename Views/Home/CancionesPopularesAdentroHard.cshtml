@@ -1,0 +1,83 @@
+@{
+    ViewData["Title"] = "Flaca - Andres Calamaro";
+    Layout = "_Layout";
+}
+
+<div class="tablature-container">
+    <header class="tablature-header">
+        <button class="menu-button" onclick="toggleMenu()">
+            <span class="menu-icon">☰</span>
+        </button>
+        <div class="song-info">
+            <h1>Flaca</h1>
+            <p class="artist">Andres Calamaro</p>
+        </div>
+    </header>
+
+    <div class="tablature-content">
+        <div class="song-info-header">
+            <h2>Flaca - Andres Calamaro</h2>
+            <p class="tab-info">Tab by Thec P | Tuning: Standard (E A D G B E) | Tempo: 110 BPM</p>
+        </div>
+
+        <div class="tab-section intro">
+            <h3 class="section-title">Intro</h3>
+            <pre class="guitar-tab">
+        G                 B
+        e|-----------------|
+        B|-----------------|
+        G|-----------------|
+        D|-----------------|
+        A|--2---2---2---2--|
+        E|--3---3---3---3--|
+            </pre>
+        </div>
+
+        <div class="tab-section verse">
+            <h3 class="section-title">Verso</h3>
+            <pre class="guitar-tab">
+        Em                 C
+        e|-----------------|
+        B|-----------------|
+        G|-----------------|
+        D|-----------------|
+        A|--0---0---0---0--|
+        E|--0---0---0---0--|
+            </pre>
+        </div>
+
+        <div class="tab-section chorus">
+            <h3 class="section-title">Coro</h3>
+            <pre class="guitar-tab">
+        G                 D
+        e|-----------------|
+        B|-----------------|
+        G|-----------------|
+        D|-----------------|
+        A|--2---2---2---2--|
+        E|--3---3---3---3--|
+            </pre>
+        </div>
+    </div>
+
+    <div class="back-button-container">
+        <a href="@Url.Action("CancionesPopulares", "Home")" class="back-button">
+            Volver a canciones populares
+        </a>
+    </div>
+
+    <!-- Interactive Guitar Display -->
+    <div class="guitar-display">
+        <img src="~/imagenes/MangoGuitarra.png" alt="Guitar Fretboard" class="guitar-image" />
+        <div class="fret-numbers" id="fretNumbers">
+            <!-- Numbers will be added here by JavaScript -->
+        </div>
+        <div class="play-controls">
+            <button id="playButton" class="play-button">▶️ Reproducir</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}

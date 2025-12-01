@@ -44,9 +44,15 @@ public class HomeController : Controller
 
 
 
+    public IActionResult CancionesPopularesAdentroHard()
+    {
+        // Aquí puedes agregar lógica para cargar la canción específica si es necesario
+        // Por ahora, simplemente devolvemos la vista
+        return View("CancionesPopularesAdentroHard");
+    }
+
     public IActionResult Cursos()
     {
-
         Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));//Saca de sesion
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         List<Instrumento> instrumentos = BD.GetInstrumetnos(usuario.IdUsuario);
