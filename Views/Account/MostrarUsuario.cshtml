@@ -19,7 +19,12 @@
       <a class="links" href='@Url.Action("SeleccionarUsuario", "Account", new { idUsuario = usuario.IdUsuario })'>
           <article class="usuario-tarjeta">
               <div class="usuario-circulo">
-                  <img src="" alt="Foto de @usuario.Nombre">
+                @if(usuario.FotoPerfil == null){
+                  <img src="/imagenes/Vector.png" alt="k">
+                }else{
+                  <img src="@usuario.FotoPerfil" alt="Foto de @usuario.Nombre">
+                }
+                  
               </div>
               <p>@usuario.Nombre</p>
           </article>
@@ -45,5 +50,5 @@ else
     <div>
       <a href='@Url.Action("LogOut", "Account")' class = "accion-primaria"> Cerrar sesion </a>
     </div>
-
+    <p>@ViewBag.mensaje</p>
   </main>
