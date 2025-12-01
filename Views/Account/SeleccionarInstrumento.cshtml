@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "SeleccionarInstrumento";
+    <link rel="stylesheet" href="~/css/seleccion.css" asp-append-version="true" />
 }
 
 <div class="container py-5">
@@ -72,77 +73,3 @@
         </div>
     }
 </div>
-<style>
-    .instrument-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-        height: 100%;
-        position: relative;
-    }
-
-    .instrument-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 132, 221, 0.2);
-    }
-
-    .instrument-img-container {
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f8f9fa;
-        padding: 20px;
-    }
-
-    .instrument-img {
-        max-width: 80%;
-        max-height: 80%;
-        object-fit: contain;
-        transition: transform 0.3s ease;
-    }
-
-    .instrument-card:hover .instrument-img {
-        transform: scale(1.05);
-    }
-
-    .instrument-overlay {
-        padding: 20px;
-        text-align: center;
-        background: white;
-    }
-
-    .instrument-overlay h3 {
-        color: #0D3B99;
-        margin-bottom: 10px;
-        font-family: 'ArsenicaTrial', Georgia, serif;
-    }
-
-    .instrument-overlay p {
-        color: #6c757d;
-        font-size: 0.9rem;
-        margin-bottom: 0;
-    }
-
-    h1 {
-        color: #0D3B99;
-        font-family: 'ArsenicaTrial', Georgia, serif;
-        font-weight: 600;
-    }
-</style>
-
-<script>
-    function seleccionarInstrumento(instrumento) {
-        // Aquí puedes agregar la lógica para manejar la selección del instrumento
-        console.log('Instrumento seleccionado:', instrumento);
-        // Ejemplo de redirección (ajusta según tu ruta)
-        // window.location.href = `/Aprender/${instrumento}`;
-        
-        // Muestra un mensaje temporal (puedes personalizar esto)
-        const mensaje = `¡Has seleccionado ${instrumento.charAt(0).toUpperCase() + instrumento.slice(1)}!`;
-        alert(mensaje);
-    }
-</script>
