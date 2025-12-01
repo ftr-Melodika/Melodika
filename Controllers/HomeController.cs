@@ -60,11 +60,6 @@ public class HomeController : Controller
             return RedirectToAction("Login", "Account");
         }
         else{
-<<<<<<< HEAD
-            if(instrumentos.Count == 0){
-                ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
-                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
-=======
             if(usuario != null){
                 List<Instrumento> instrumentos = BD.GetInstrumentos(usuario.IdUsuario);
                 if(instrumentos.Count == 0){
@@ -76,7 +71,6 @@ public class HomeController : Controller
                     ViewBag.cursos = cursos;
                     return View("Cursos");
                 }
->>>>>>> bc8ab6d24f7b8f18a9fde7a3b91e0790afdb44ec
             }
             else{
                 ViewBag.mensaje = "Primero, seleccione un usuario";

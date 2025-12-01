@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using melodika.Models
+@using System.Linq
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -87,10 +89,21 @@
             </li>
 
           </ul>
+
+            <div class="d-flex ms-auto align-items-center">
+            @if (Objeto.StringToObject<Cuenta>(Context.Session.GetString("cuenta")) == null)
+            {
+              <a class="btn btn-outline-primary me-2" href='@Url.Action("Login", "Account")'>Iniciar sesión</a>
+              <a class="btn btn-primary" href='@Url.Action("CrearCuenta", "Account")'>Crear Cuenta</a>
+            }
+
+          </div>
         </div>
       </div>
     </nav>
+    <div>
 
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
   </header>
