@@ -166,7 +166,7 @@ public class AccountController : Controller
 
     public IActionResult SeleccionarInstrumento()
     {
-        return View("SeleccionarInstrumento");
+        return View("~/Views/Account/SeleccionarInstrumento.cshtml");
     }
 
     public IActionResult SeleccionarInstrumentoGuardar(int idInstrumento)
@@ -177,15 +177,15 @@ public class AccountController : Controller
         switch(reporte){
             case -1:
                 ViewBag.mensaje = "No hay un usuario seleccionado";
-                return View("SeleccionarInstrumento");
+                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
 
             case -2:
                 ViewBag.mensaje = "Algo salio mal.";
-                return View("SeleccionarInstrumento");
+                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
 
             default:
                 ViewBag.mensaje = "Instrumento seleccionado correctamente";
-                return View("SeleccionarInstrumento");
+                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
         }
     }
 

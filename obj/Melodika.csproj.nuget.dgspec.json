@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\49378703\\Desktop\\Melodika\\Melodika.csproj": {}
   },
   "projects": {
@@ -12,12 +13,61 @@
         "projectPath": "C:\\Users\\49378703\\Desktop\\Melodika\\Melodika.csproj",
         "packagesPath": "C:\\Users\\49378703\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\49378703\\Desktop\\Melodika\\obj\\",
+=======
+<<<<<<< HEAD
+    "C:\\Users\\49009466\\Downloads\\Melodika-1\\Melodika.csproj": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
+        "projectName": "Melodika",
+        "projectPath": "C:\\Users\\49092806\\Downloads\\Melodika\\Melodika.csproj",
+        "packagesPath": "C:\\Users\\49092806\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49092806\\Downloads\\Melodika\\obj\\",
+=======
+    "C:\\Users\\48802641\\Melodika\\Melodika.csproj": {}
+>>>>>>> bc8ab6d24f7b8f18a9fde7a3b91e0790afdb44ec
+  },
+  "projects": {
+    "C:\\Users\\49009466\\Downloads\\Melodika-1\\Melodika.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\49009466\\Downloads\\Melodika-1\\Melodika.csproj",
+        "projectName": "Melodika",
+<<<<<<< HEAD
+        "projectPath": "C:\\Users\\49009466\\Downloads\\Melodika-1\\Melodika.csproj",
+        "packagesPath": "C:\\Users\\49009466\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49009466\\Downloads\\Melodika-1\\obj\\",
+=======
+        "projectPath": "C:\\Users\\48802641\\Melodika\\Melodika.csproj",
+        "packagesPath": "C:\\Users\\48802641\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48802641\\Melodika\\obj\\",
+>>>>>>> 5b793296d97d7c2c1fee825dbcc9ed91cde6da93
+>>>>>>> bc8ab6d24f7b8f18a9fde7a3b91e0790afdb44ec
+>>>>>>> 76a8c98d6e419a826c8b8b10ff70fb7f61be8bc2
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\49378703\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+          "C:\\Users\\49009466\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+          "C:\\Users\\49092806\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\48802641\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5b793296d97d7c2c1fee825dbcc9ed91cde6da93
+>>>>>>> bc8ab6d24f7b8f18a9fde7a3b91e0790afdb44ec
+>>>>>>> 76a8c98d6e419a826c8b8b10ff70fb7f61be8bc2
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

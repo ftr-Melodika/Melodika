@@ -168,7 +168,7 @@ static public List<Cancion> GetCanciones()
         return idInstrumento;
     }
 
-    static public List<Instrumento> GetInstrumetnos(int idUsuario){
+    static public List<Instrumento> GetInstrumentos(int idUsuario){
         List<Instrumento> instrumentos = new List<Instrumento>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
