@@ -49,21 +49,34 @@ public class HomeController : Controller
 
         Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));//Saca de sesion
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
-        List<Instrumento> instrumentos = BD.GetInstrumetnos(usuario.IdUsuario);
+        
         if (cuenta == null){
             return RedirectToAction("Login", "Account");
         }
         else{
+<<<<<<< HEAD
             if(instrumentos.Count == 0){
                 ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
                 return View("~/Views/Account/SeleccionarInstrumento.cshtml");
+=======
+            if(usuario != null){
+                List<Instrumento> instrumentos = BD.GetInstrumentos(usuario.IdUsuario);
+                if(instrumentos.Count == 0){
+                    ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
+                    return RedirectToAction("SeleccionarInstrumento", "Account");
+                }
+                else{            
+                    List<Curso> cursos = BD.getCursos();
+                    ViewBag.cursos = cursos;
+                    return View("Cursos");
+                }
+>>>>>>> bc8ab6d24f7b8f18a9fde7a3b91e0790afdb44ec
             }
-            else{            
-                List<Curso> cursos = BD.getCursos();
-                ViewBag.cursos = cursos;
-                return View("Cursos");
+            else{
+                ViewBag.mensaje = "Primero, seleccione un usuario";
+                return RedirectToAction("MostrarUsuario", "Account");
             }
-
+       
         }
     }
 
