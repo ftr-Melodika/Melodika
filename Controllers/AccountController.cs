@@ -94,7 +94,7 @@ public class AccountController : Controller
                     break;
                 default:
                     ViewBag.mensaje = "Cuenta creada correctamente";
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Login", "Account"); //PONER MENSAJE ACA
                     break;
             }
             
@@ -128,7 +128,7 @@ public class AccountController : Controller
 
             default:
                 ViewBag.mensaje = "Usuario creado correctamente";
-                return RedirectToAction("MostrarUsuario", "Account");
+                return RedirectToAction("MostrarUsuario", "Account"); //PONER MENSAJE ACA
 
         }
 
@@ -137,12 +137,16 @@ public class AccountController : Controller
 
 
 
-    public IActionResult MostrarUsuario()
+    public IActionResult MostrarUsuario(string mensaje="")
     {
         Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
         int idCuenta = cuenta.IdCuenta;
         List<Usuario> usuarios = BD.GetUsuariosCuentaSimple(idCuenta);
         ViewBag.usuarios = usuarios;
+        if (mensaje!="")
+        {
+            ViewBag.mensaje = mensaje;
+        }
         return View("MostrarUsuario");
     }
 
@@ -158,8 +162,8 @@ public class AccountController : Controller
         }
         else
         {
-            ViewBag.mensaje = "No hay usuarios disponibles para esta cuenta";
-            return RedirectToAction("MostrarUsuario", "Account");
+            
+            return RedirectToAction("MostrarUsuario", "Account",new {mensaje = "No hay usuarios disponibles para esta cuenta"});
         }
         //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
     }
@@ -194,18 +198,41 @@ public class AccountController : Controller
 
         HttpContext.Session.Remove("cuenta");
         ViewBag.mensaje = "Usted salió correctamente de la sesión.";
-        return RedirectToAction("Index", "Home"); 
+        return RedirectToAction("Index", "Home"); //PONER MENSAJE
     }
 
-    public IActionResult InformacionUsuario()
+    public IActionResult InformacionUsuario(string mensaje)
     {
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         Usuario usuarioComplejo = BD.GetUsuarioComplejo(usuario.IdUsuario);
         ViewBag.usuario = usuarioComplejo;
         List<Instrumento> instrumentosUsuario = BD.GetInstrumentos(usuario.IdUsuario);
         ViewBag.instrumentos = instrumentosUsuario;
+        if (mensaje!="")
+        {
+            ViewBag.mensaje = mensaje;
+        }
         return View("InformacionUsuario");
     }
 
+    public IActionResult quitarInstrumento(){
+        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        int idInstrumento = BD.GetIdInstrumento(usuario.IdUsuario);
+        int reporte = BD.QuitarInstrumentoUsuario(usuario.IdUsuario, idInstrumento);
+        switch(reporte){
+            case -1:
+                return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Ocurrio un error"});
 
+            case -2:
+                return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Se intento borrar un instrumento que no existe"});
+
+            case 0:
+                return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Se borro exitosamente el instrumento"});
+            
+            default:
+            
+            return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Error desconocido"});
+        }
+        
+    }
 }

@@ -176,7 +176,7 @@ static public List<Cancion> GetCanciones()
                 new{IdUsuario = idUsuario, IdInstrumento = idInstrumento},
                 commandType: CommandType.StoredProcedure);
         }
-        return idInstrumento;
+        return reporte;
     }
 
     static public List<Instrumento> GetInstrumentos(int idUsuario){
@@ -188,6 +188,33 @@ static public List<Cancion> GetCanciones()
         }
         return instrumentos;
     }
+
+    static public int GetIdInstrumento(int idUsuario){
+        int idInstrumento = -2;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string storedProcedure = "GetIdInstrumento";
+            idInstrumento = connection.QueryFirstOrDefault<int>(storedProcedure, new{idUsuario = idUsuario}, commandType: CommandType.StoredProcedure);
+        }
+        return idInstrumento;
+    }
+
+    static public int QuitarInstrumentoUsuario(int idUsuario, int idInstrumento)
+{
+    int reporte = -1;
+    using (SqlConnection connection = new SqlConnection(_connectionString))
+    {
+    
+        string storedProcedure = "QuitarInstrumento"; 
+
+        reporte = connection.QueryFirstOrDefault<int>(
+            storedProcedure,
+            new { IdUsuario = idUsuario, IdInstrumento = idInstrumento },
+            commandType: CommandType.StoredProcedure);
+    }
+    
+    return reporte; 
+}
 
 }
 
