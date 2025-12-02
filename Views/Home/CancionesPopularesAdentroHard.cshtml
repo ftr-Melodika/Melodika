@@ -66,14 +66,210 @@
         </a>
     </div>
 
-    <!-- Interactive Guitar Display -->
-    <div class="guitar-display">
-        <img src="~/imagenes/MangoGuitarra.png" alt="Guitar Fretboard" class="guitar-image" />
-        <div class="fret-numbers" id="fretNumbers">
-            <!-- Numbers will be added here by JavaScript -->
+    <!-- Guitar Fretboard -->
+    <div class="guitar-fretboard">
+        <div class="fretboard">
+            <!-- Fret numbers at the top -->
+            <div class="fret-numbers">
+                <div style="width: 50px;"></div> <!-- Space for string names -->
+                <div class="fret-number">0</div>
+                <div class="fret-number">1</div>
+                <div class="fret-number">2</div>
+                <div class="fret-number">3</div>
+                <div class="fret-number">4</div>
+                <div class="fret-number">5</div>
+                <div class="fret-number">6</div>
+                <div class="fret-number">7</div>
+                <div class="fret-number">8</div>
+                <div class="fret-number">9</div>
+                <div class="fret-number">10</div>
+                <div class="fret-number">11</div>
+                <div class="fret-number">12</div>
+                <div class="fret-number">13</div>
+                <div class="fret-number">14</div>
+                <div class="fret-number">15</div>
+                <div class="fret-number">16</div>
+                <div class="fret-number">17</div>
+                <div class="fret-number">18</div>
+                <div class="fret-number">19</div>
+            </div>
+
+            <!-- Fret lines -->
+            <div class="fret-lines">
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+                <div class="fret-line"></div>
+            </div>
+
+            <div class="strings">
+                <!-- String 1 (High E) -->
+                <div class="string">
+                    <div class="string-name">e</div>
+                    <div class="fret" data-string="1" data-fret="0"></div>
+                    <div class="fret" data-string="1" data-fret="1"></div>
+                    <div class="fret" data-string="1" data-fret="2"></div>
+                    <div class="fret" data-string="1" data-fret="3"></div>
+                    <div class="fret" data-string="1" data-fret="4"></div>
+                    <div class="fret" data-string="1" data-fret="5"></div>
+                    <div class="fret" data-string="1" data-fret="6"></div>
+                    <div class="fret" data-string="1" data-fret="7"></div>
+                    <div class="fret" data-string="1" data-fret="8"></div>
+                    <div class="fret" data-string="1" data-fret="9"></div>
+                    <div class="fret" data-string="1" data-fret="10"></div>
+                    <div class="fret" data-string="1" data-fret="11"></div>
+                    <div class="fret" data-string="1" data-fret="12"></div>
+                    <div class="fret" data-string="1" data-fret="13"></div>
+                    <div class="fret" data-string="1" data-fret="14"></div>
+                    <div class="fret" data-string="1" data-fret="15"></div>
+                    <div class="fret" data-string="1" data-fret="16"></div>
+                    <div class="fret" data-string="1" data-fret="17"></div>
+                    <div class="fret" data-string="1" data-fret="18"></div>
+                    <div class="fret" data-string="1" data-fret="19"></div>
+                </div>
+                <!-- String 2 (B) -->
+                <div class="string">
+                    <div class="string-name">B</div>
+                    <div class="fret" data-string="2" data-fret="0"></div>
+                    <div class="fret" data-string="2" data-fret="1"></div>
+                    <div class="fret" data-string="2" data-fret="2"></div>
+                    <div class="fret" data-string="2" data-fret="3"></div>
+                    <div class="fret" data-string="2" data-fret="4"></div>
+                    <div class="fret" data-string="2" data-fret="5"></div>
+                    <div class="fret" data-string="2" data-fret="6"></div>
+                    <div class="fret" data-string="2" data-fret="7"></div>
+                    <div class="fret" data-string="2" data-fret="8"></div>
+                    <div class="fret" data-string="2" data-fret="9"></div>
+                    <div class="fret" data-string="2" data-fret="10"></div>
+                    <div class="fret" data-string="2" data-fret="11"></div>
+                    <div class="fret" data-string="2" data-fret="12"></div>
+                    <div class="fret" data-string="2" data-fret="13"></div>
+                    <div class="fret" data-string="2" data-fret="14"></div>
+                    <div class="fret" data-string="2" data-fret="15"></div>
+                    <div class="fret" data-string="2" data-fret="16"></div>
+                    <div class="fret" data-string="2" data-fret="17"></div>
+                    <div class="fret" data-string="2" data-fret="18"></div>
+                    <div class="fret" data-string="2" data-fret="19"></div>
+                </div>
+                <!-- String 3 (G) -->
+                <div class="string">
+                    <div class="string-name">G</div>
+                    <div class="fret" data-string="3" data-fret="0"></div>
+                    <div class="fret" data-string="3" data-fret="1"></div>
+                    <div class="fret" data-string="3" data-fret="2"></div>
+                    <div class="fret" data-string="3" data-fret="3"></div>
+                    <div class="fret" data-string="3" data-fret="4"></div>
+                    <div class="fret" data-string="3" data-fret="5"></div>
+                    <div class="fret" data-string="3" data-fret="6"></div>
+                    <div class="fret" data-string="3" data-fret="7"></div>
+                    <div class="fret" data-string="3" data-fret="8"></div>
+                    <div class="fret" data-string="3" data-fret="9"></div>
+                    <div class="fret" data-string="3" data-fret="10"></div>
+                    <div class="fret" data-string="3" data-fret="11"></div>
+                    <div class="fret" data-string="3" data-fret="12"></div>
+                    <div class="fret" data-string="3" data-fret="13"></div>
+                    <div class="fret" data-string="3" data-fret="14"></div>
+                    <div class="fret" data-string="3" data-fret="15"></div>
+                    <div class="fret" data-string="3" data-fret="16"></div>
+                    <div class="fret" data-string="3" data-fret="17"></div>
+                    <div class="fret" data-string="3" data-fret="18"></div>
+                    <div class="fret" data-string="3" data-fret="19"></div>
+                </div>
+                <!-- String 4 (D) -->
+                <div class="string">
+                    <div class="string-name">D</div>
+                    <div class="fret" data-string="4" data-fret="0"></div>
+                    <div class="fret" data-string="4" data-fret="1"></div>
+                    <div class="fret" data-string="4" data-fret="2"></div>
+                    <div class="fret" data-string="4" data-fret="3"></div>
+                    <div class="fret" data-string="4" data-fret="4"></div>
+                    <div class="fret" data-string="4" data-fret="5"></div>
+                    <div class="fret" data-string="4" data-fret="6"></div>
+                    <div class="fret" data-string="4" data-fret="7"></div>
+                    <div class="fret" data-string="4" data-fret="8"></div>
+                    <div class="fret" data-string="4" data-fret="9"></div>
+                    <div class="fret" data-string="4" data-fret="10"></div>
+                    <div class="fret" data-string="4" data-fret="11"></div>
+                    <div class="fret" data-string="4" data-fret="12"></div>
+                    <div class="fret" data-string="4" data-fret="13"></div>
+                    <div class="fret" data-string="4" data-fret="14"></div>
+                    <div class="fret" data-string="4" data-fret="15"></div>
+                    <div class="fret" data-string="4" data-fret="16"></div>
+                    <div class="fret" data-string="4" data-fret="17"></div>
+                    <div class="fret" data-string="4" data-fret="18"></div>
+                    <div class="fret" data-string="4" data-fret="19"></div>
+                </div>
+                <!-- String 5 (A) -->
+                <div class="string">
+                    <div class="string-name">A</div>
+                    <div class="fret" data-string="5" data-fret="0"></div>
+                    <div class="fret" data-string="5" data-fret="1"></div>
+                    <div class="fret" data-string="5" data-fret="2"></div>
+                    <div class="fret" data-string="5" data-fret="3"></div>
+                    <div class="fret" data-string="5" data-fret="4"></div>
+                    <div class="fret" data-string="5" data-fret="5"></div>
+                    <div class="fret" data-string="5" data-fret="6"></div>
+                    <div class="fret" data-string="5" data-fret="7"></div>
+                    <div class="fret" data-string="5" data-fret="8"></div>
+                    <div class="fret" data-string="5" data-fret="9"></div>
+                    <div class="fret" data-string="5" data-fret="10"></div>
+                    <div class="fret" data-string="5" data-fret="11"></div>
+                    <div class="fret" data-string="5" data-fret="12"></div>
+                    <div class="fret" data-string="5" data-fret="13"></div>
+                    <div class="fret" data-string="5" data-fret="14"></div>
+                    <div class="fret" data-string="5" data-fret="15"></div>
+                    <div class="fret" data-string="5" data-fret="16"></div>
+                    <div class="fret" data-string="5" data-fret="17"></div>
+                    <div class="fret" data-string="5" data-fret="18"></div>
+                    <div class="fret" data-string="5" data-fret="19"></div>
+                </div>
+                <!-- String 6 (Low E) -->
+                <div class="string">
+                    <div class="string-name">E</div>
+                    <div class="fret" data-string="6" data-fret="0"></div>
+                    <div class="fret" data-string="6" data-fret="1"></div>
+                    <div class="fret" data-string="6" data-fret="2"></div>
+                    <div class="fret" data-string="6" data-fret="3"></div>
+                    <div class="fret" data-string="6" data-fret="4"></div>
+                    <div class="fret" data-string="6" data-fret="5"></div>
+                    <div class="fret" data-string="6" data-fret="6"></div>
+                    <div class="fret" data-string="6" data-fret="7"></div>
+                    <div class="fret" data-string="6" data-fret="8"></div>
+                    <div class="fret" data-string="6" data-fret="9"></div>
+                    <div class="fret" data-string="6" data-fret="10"></div>
+                    <div class="fret" data-string="6" data-fret="11"></div>
+                    <div class="fret" data-string="6" data-fret="12"></div>
+                    <div class="fret" data-string="6" data-fret="13"></div>
+                    <div class="fret" data-string="6" data-fret="14"></div>
+                    <div class="fret" data-string="6" data-fret="15"></div>
+                    <div class="fret" data-string="6" data-fret="16"></div>
+                    <div class="fret" data-string="6" data-fret="17"></div>
+                    <div class="fret" data-string="6" data-fret="18"></div>
+                    <div class="fret" data-string="6" data-fret="19"></div>
+                </div>
+            </div>
         </div>
-        <div class="play-controls">
+        
+        <div class="chord-name" id="currentChord">-</div>
+        <div class="controls">
             <button id="playButton" class="play-button">▶️ Reproducir</button>
+            <button id="nextButton" class="next-button">Siguiente acorde</button>
         </div>
     </div>
 </div>
