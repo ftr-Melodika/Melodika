@@ -7,7 +7,7 @@ using System.Linq;
 using System.Data;
 public static class BD
 {
-    private static string _connectionString = @"Server=.\SQLEXPRESS; DataBase = Melodika_DB; Trusted_Connection = true; TrustServerCertificate = true";
+    private static string _connectionString = @"Server=localHost; DataBase = Melodika_DB; Trusted_Connection = true; TrustServerCertificate = true";
 
 /*
 static public List<Cancion> seleccionarCancion()
