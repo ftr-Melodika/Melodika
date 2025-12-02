@@ -252,6 +252,377 @@ body {
   }
 }
 
+/* Guitar Fretboard */
+.guitar-fretboard {
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: visible;
+}
+
+.fretboard {
+    position: relative;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    background: #F5DEB3;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 30px 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fret lines */
+.fret-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    pointer-events: none;
+    z-index: 95;  /* Encima del fondo pero debajo de las cuerdas */
+}
+
+.fret-line {
+    flex: 1;
+    border-right: 2px solid #8B4513;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 95;
+}
+
+.fret-line:last-child {
+    border-right: none;
+}
+
+.strings {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 50;  /* Asegura que el contenedor esté por encima de otros elementos */
+}
+
+.string {
+    display: flex;
+    position: relative;
+    height: 40px;
+    align-items: center;
+    margin: 5px 0;
+    z-index: 100;  /* Asegura que las cuerdas estén por encima de los trastes */
+}
+
+/* Vertical fret lines */
+.fret-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #8B4513;
+    z-index: 1;
+}
+
+/* String lines (horizontal) */
+.string::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #000000;
+    z-index: 100;  /* Encima de todo */
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    transition: all 0.2s ease;
+}
+
+/* Make the strings more visible when hovering */
+.string:hover::after {
+    height: 3px;
+    background: #000000;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    opacity: 1;
+    transform: scaleY(1.2);
+    z-index: 101;  /* Aún más alto al hacer hover */
+}
+
+/* Add a subtle 3D effect to the strings */
+.string:nth-child(1)::after { top: 10%; }  /* High E */
+.string:nth-child(2)::after { top: 30%; }  /* B */
+.string:nth-child(3)::after { top: 50%; }  /* G */
+.string:nth-child(4)::after { top: 70%; }  /* D */
+.string:nth-child(5)::after { top: 90%; }  /* A */
+.string:nth-child(6)::after { top: 110%; } /* Low E */
+
+/* Fret numbers at the top */
+.fret-numbers {
+    display: flex;
+    margin-bottom: 5px;
+    padding-left: 50px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #F5DEB3;
+    padding: 8px 0 12px;
+    border-bottom: 2px solid #8B4513;
+}
+
+.fret-number {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #5D2906;
+    min-width: 40px;
+    font-size: 1.1em;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+/* String names */
+.string-name {
+    position: absolute;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    color: #111;
+    background: #F5DEB3;
+    border: 2px solid #8B4513;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 1.1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Make the nut (0th fret) more visible */
+.fret[data-fret="0"] {
+    background: rgba(139, 69, 19, 0.1);
+    border-right: 3px solid #8B4513;
+    font-weight: bold;
+    color: #5D2906;
+}
+
+/* Highlight the string names on hover */
+.string:hover .string-name {
+    background: #8B4513;
+    color: white;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+/* Fret positions */
+.fret {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 40px;
+    width: 5%;
+    height: 100%;
+    z-index: 90;  /* Debajo de los trastes pero encima del fondo */
+}
+
+/* Active fret */
+.fret.active {
+    background: rgba(76, 175, 80, 0.7);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 3;
+}
+
+/* Muted string */
+.fret.muted::before {
+    content: 'X';
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.play-button, .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.next-button {
+    background-color: #2196F3;
+    color: white;
+}
+
+.next-button:hover {
+    background-color: #0b7dda;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.chord-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+    color: #333;
+}
+
+.fretboard {
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.strings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.string {
+    display: flex;
+    position: relative;
+    height: 30px;
+    margin: 2px 0;
+}
+
+.string::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #999;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.fret {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.fret[data-fret="0"] {
+    width: 30px;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 2;
+    background: #f8f9fa;
+}
+
+.fret.active {
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.fret.muted::before {
+    content: 'X';
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.chord-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+    height: 30px;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.play-button, .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.next-button {
+    background-color: #2196F3;
+    color: white;
+}
+
+.next-button:hover {
+    background-color: #0b7dda;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 /* Contacto rediseño */
 .contacto-page {
   background-color: #FFFFFF;
