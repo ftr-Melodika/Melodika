@@ -195,7 +195,6 @@ public class AccountController : Controller
 
     public IActionResult logout()
     {
-
         HttpContext.Session.Remove("cuenta");
         ViewBag.mensaje = "Usted salió correctamente de la sesión.";
         return RedirectToAction("Index", "Home"); //PONER MENSAJE
