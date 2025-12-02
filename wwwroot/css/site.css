@@ -52,6 +52,7 @@ body {
   margin-bottom: 30px;
   text-align: center;
   font-family: ArsenicaTrial;
+  
 }
 
 .icon-box {
@@ -1182,13 +1183,11 @@ body {
 }
 
 .section-title {
-  color: #333;
-  font-size: 1.2em;
+  color: #0D3B99;
   margin-top: 0;
   margin-bottom: 15px;
   padding-bottom: 8px;
   border-bottom: 1px solid #eee;
-  display: flex;
   align-items: center;
   font-weight: 600;
 }
@@ -1685,6 +1684,10 @@ footer {
 }
 
 
+.row {
+  display: flex !important;
+  justify-content: center !important;   
+}
 
 /*Cursos*/
 .CursosTitulo

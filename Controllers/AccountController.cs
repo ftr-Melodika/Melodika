@@ -241,6 +241,51 @@ public class AccountController : Controller
             return RedirectToAction("Index", "Home");
         }
     }
-
-
 }
+/**public IActionResult CambiarFotoPerfil(IFormFile fotoPerfil)
+{
+    Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+    Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+
+    if (cuenta == null || usuario == null)
+    {
+        return RedirectToAction("Login", "Account");
+    }
+
+    if (fotoPerfil != null && fotoPerfil.Length > 0)
+    {
+        // Carpeta física donde se van a guardar las fotos
+        string carpetaFotos = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "usuarios");
+
+        if (!Directory.Exists(carpetaFotos))
+        {
+            Directory.CreateDirectory(carpetaFotos);
+        }
+
+        // Nombre del archivo (por ejemplo: usuario_5.jpg)
+        string extension = Path.GetExtension(fotoPerfil.FileName);
+        string nombreArchivo = "usuario_" + usuario.IdUsuario + extension;
+
+        string rutaFisica = Path.Combine(carpetaFotos, nombreArchivo);
+
+        using (FileStream archivoStream = new FileStream(rutaFisica, FileMode.Create))
+        {
+            fotoPerfil.CopyTo(archivoStream);
+        }
+
+        // Ruta que se guarda en la BD (para usar en <img src="...">)
+        string rutaParaGuardar = "/img/usuarios/" + nombreArchivo;
+
+        // Actualizar en la base de datos
+        BD.CambiarFotoPerfil(usuario.IdUsuario, rutaParaGuardar);
+
+        // Actualizar en sesión
+        usuario.FotoPerfil = rutaParaGuardar;
+        HttpContext.Session.SetString("usuario", Objeto.ObjectToString<Usuario>(usuario));
+    }
+
+    // Volver a la pantalla del usuario (cambia "MostrarUsuario" por la tuya)
+    return RedirectToAction("MostrarUsuario", "Account");
+}
+
+}**/
