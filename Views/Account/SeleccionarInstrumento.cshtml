@@ -69,7 +69,19 @@
     @if(ViewBag.mensaje != null)
     {
         <div class="alert alert-info text-center mt-3">
-            @ViewBag.mensaje
+            @if(ViewBag.mensaje == "Para seleccionar un nuevo instrumento primero debe quitar el anterior.")
+            {
+                @ViewBag.mensaje
+                <a href="@Url.Action("quitarInstrumento", "Account")" class="btn btn-primary mt-2">Quitar instrumento</a>
+            }
+            else if (ViewBag.mensaje == "Ya tenés seleccionado este instrumento." || ViewBag.mensaje == "Instrumento seleccionado correctamente"){
+                @ViewBag.mensaje
+                <a href="@Url.Action("Cursos", "Home")" class="btn btn-primary mt-2">Ir a cursos</a>
+            }
+            else
+            {
+                @ViewBag.mensaje
+            }
         </div>
     }
 </div>

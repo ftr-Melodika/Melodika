@@ -65,7 +65,7 @@ public class HomeController : Controller
                 List<Instrumento> instrumentos = BD.GetInstrumentos(usuario.IdUsuario);
                 if(instrumentos.Count == 0){
                     ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
-                    return RedirectToAction("SeleccionarInstrumento", "Account");
+                    return RedirectToAction("SeleccionarInstrumento", "Account");//poner lo de mensaje en esa vista
                 }
                 else{            
                     List<Curso> cursos = BD.getCursos();
@@ -75,7 +75,7 @@ public class HomeController : Controller
             }
             else{
                 ViewBag.mensaje = "Primero, seleccione un usuario";
-                return RedirectToAction("MostrarUsuario", "Account");
+                return RedirectToAction("MostrarUsuario", "Account");//Aca tmb
             }
        
         }

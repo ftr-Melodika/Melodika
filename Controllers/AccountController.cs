@@ -168,8 +168,12 @@ public class AccountController : Controller
         //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
     }
 
-    public IActionResult SeleccionarInstrumento()
+    public IActionResult SeleccionarInstrumento(string mensaje="")
     {
+        if (mensaje!="")
+        {
+            ViewBag.mensaje = mensaje;
+        }
         return View("SeleccionarInstrumento");
     }
 
@@ -186,6 +190,14 @@ public class AccountController : Controller
             case -2:
                 ViewBag.mensaje = "Algo salio mal.";
                 return View("SeleccionarInstrumento");
+
+            case -3:
+                ViewBag.mensaje = "Para seleccionar un nuevo instrumento primero debe quitar el anterior.";
+                return View("SeleccionarInstrumento");
+            
+            case -4:
+            ViewBag.mensaje = "Ya tenés seleccionado este instrumento.";
+            return View("SeleccionarInstrumento");
 
             default:
                 ViewBag.mensaje = "Instrumento seleccionado correctamente";
@@ -220,17 +232,17 @@ public class AccountController : Controller
         int reporte = BD.QuitarInstrumentoUsuario(usuario.IdUsuario, idInstrumento);
         switch(reporte){
             case -1:
-                return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Ocurrio un error"});
+                return RedirectToAction("SeleccionarInstrumento", "Account", new {mensaje = "Ocurrio un error"});
 
             case -2:
-                return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Se intento borrar un instrumento que no existe"});
+                return RedirectToAction("SeleccionarInstrumento", "Account", new {mensaje = "Se intento borrar un instrumento que no existe"});
 
             case 0:
-                return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Se borro exitosamente el instrumento"});
+                return RedirectToAction("SeleccionarInstrumento", "Account", new {mensaje = "Se borro exitosamente el instrumento"});
             
             default:
             
-            return RedirectToAction("InformacionUsuario", "Account", new {mensaje = "Error desconocido"});
+            return RedirectToAction("SeleccionarInstrumento", "Account", new {mensaje = "Error desconocido"});
         }
         
     }

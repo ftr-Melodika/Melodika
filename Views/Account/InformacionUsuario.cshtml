@@ -25,7 +25,6 @@
                     else
                     {
                         <p class="text-muted mb-3">Sin instrumentos seleccionados</p>
-                        <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-primary">Agregar instrumento</a>
                     }
 
                     <div class="d-flex flex-column gap-2">
@@ -33,7 +32,7 @@
                         <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-outline-primary w-100">Agregar instrumento</a>
                     }
                     else{
-                        <a href="@Url.Action("CambiarInstrumento", "Account")" class="btn btn-outline-primary w-100">Cambiar instrumento</a>
+                        <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-outline-primary w-100">Cambiar instrumento</a>
                     }
                     </div>
                 </div>
@@ -47,25 +46,6 @@
     <img src="@ViewBag.usuario.FotoPerfil" alt="Foto de @ViewBag.usuario.Nombre" class="rounded-circle"
          style="width: 340px; height: 340px; object-fit: cover; border: 4px solid #f0f0f0;">
 
-    <!-- FORMULARIO PARA CAMBIAR FOTO -->
-    <form action="@Url.Action("CambiarFotoPerfil", "Account")"
-          method="post"
-          enctype="multipart/form-data"
-          style="display:inline-block;">
-
-        <input type="file"
-               id="inputFotoPerfil"
-               name="fotoPerfil"
-               accept="image/*"
-               style="display:none;"
-               onchange="this.form.submit();" />
-
-        <button type="button"
-                class="btn btn-secondary"
-                onclick="document.getElementById('inputFotoPerfil').click();">
-            Cambiar Foto
-        </button>
-    </form>
 </div>
 
 
@@ -87,4 +67,10 @@
             </div>
         </section>
     </div>
+        @if(ViewBag.mensaje != null)
+    {
+        <div class="alert alert-info text-center mt-3">
+           @ViewBag.mensaje
+        </div>
+    }
 </div>
