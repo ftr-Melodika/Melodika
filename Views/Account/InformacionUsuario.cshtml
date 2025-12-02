@@ -29,7 +29,13 @@
                     }
 
                     <div class="d-flex flex-column gap-2">
+                    @if(ViewBag.instrumentos == null){
                         <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-outline-primary w-100">Agregar instrumento</a>
+                    }
+                    else{
+                        <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-outline-primary w-100">Cambiar instrumento</a>
+                    }
+
                         <a href="@Url.Action("QuitarInstrumento", "Account")" class="btn btn-outline-danger w-100">Quitar instrumento</a>
                     </div>
                 </div>

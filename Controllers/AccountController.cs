@@ -206,4 +206,6 @@ public class AccountController : Controller
         ViewBag.instrumentos = instrumentosUsuario;
         return View("InformacionUsuario");
     }
+
+
 }
