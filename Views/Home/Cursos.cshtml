@@ -4,6 +4,12 @@
     ViewData["Title"] = "Cursos";
 }
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        alert('@Html.Raw(TempData["SuccessMessage"])');
+    </script>
+}
 
 <h1 class = "CursosTitulo">Cursos<h1>
 <section class = "SeccionCursos">

@@ -191,7 +191,6 @@ public class AccountController : Controller
 
     public IActionResult logout()
     {
-
         HttpContext.Session.Remove("cuenta");
         ViewBag.mensaje = "Usted salió correctamente de la sesión.";
         return RedirectToAction("Index", "Home"); 
@@ -199,12 +198,48 @@ public class AccountController : Controller
 
     public IActionResult InformacionUsuario()
     {
-        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
-        Usuario usuarioComplejo = BD.GetUsuarioComplejo(usuario.IdUsuario);
-        ViewBag.usuario = usuarioComplejo;
-        List<Instrumento> instrumentosUsuario = BD.GetInstrumentos(usuario.IdUsuario);
-        ViewBag.instrumentos = instrumentosUsuario;
-        return View("InformacionUsuario");
+        try
+        {
+            // Get user from session
+            var usuarioString = HttpContext.Session.GetString("usuario");
+            if (string.IsNullOrEmpty(usuarioString))
+            {
+                TempData["ErrorMessage"] = "No se encontró la sesión del usuario. Por favor, inicie sesión nuevamente.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Deserialize user object
+            var usuario = Objeto.StringToObject<Usuario>(usuarioString);
+            if (usuario == null || usuario.IdUsuario <= 0)
+            {
+                TempData["ErrorMessage"] = "La información del usuario no es válida. Por favor, inicie sesión nuevamente.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Get complete user information
+            var usuarioComplejo = BD.GetUsuarioComplejo(usuario.IdUsuario);
+            if (usuarioComplejo == null)
+            {
+                TempData["ErrorMessage"] = "No se pudo cargar la información del usuario. Por favor, intente nuevamente.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Get user's instruments
+            var instrumentosUsuario = BD.GetInstrumentos(usuario.IdUsuario) ?? new List<Instrumento>();
+            
+            ViewBag.usuario = usuarioComplejo;
+            ViewBag.instrumentos = instrumentosUsuario;
+            
+            return View("InformacionUsuario");
+        }
+        catch (Exception ex)
+        {
+            // Log the error (you should implement proper logging)
+            Console.WriteLine($"Error en InformacionUsuario: {ex.Message}");
+            
+            TempData["ErrorMessage"] = "Ocurrió un error al cargar la información del usuario. Por favor, intente nuevamente.";
+            return RedirectToAction("Index", "Home");
+        }
     }
 
 
