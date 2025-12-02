@@ -120,4 +120,27 @@ public class HomeController : Controller
         return View("Feedback");
     }
 
+    public IActionResult PersonalizarExperiencia()
+    {
+        // Check if user is logged in
+        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+        if (cuenta == null)
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
+        return View();
+    }
+
+    public IActionResult InformacionExtra()
+    {
+        // Check if user is logged in
+        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+        if (cuenta == null)
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
+        return View();
+    }
 }

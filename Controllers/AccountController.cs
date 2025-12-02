@@ -191,7 +191,6 @@ public class AccountController : Controller
 
     public IActionResult logout()
     {
-
         HttpContext.Session.Remove("cuenta");
         ViewBag.mensaje = "Usted salió correctamente de la sesión.";
         return RedirectToAction("Index", "Home"); 
@@ -199,13 +198,94 @@ public class AccountController : Controller
 
     public IActionResult InformacionUsuario()
     {
-        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
-        Usuario usuarioComplejo = BD.GetUsuarioComplejo(usuario.IdUsuario);
-        ViewBag.usuario = usuarioComplejo;
-        List<Instrumento> instrumentosUsuario = BD.GetInstrumentos(usuario.IdUsuario);
-        ViewBag.instrumentos = instrumentosUsuario;
-        return View("InformacionUsuario");
+        try
+        {
+            // Get user from session
+            var usuarioString = HttpContext.Session.GetString("usuario");
+            if (string.IsNullOrEmpty(usuarioString))
+            {
+                TempData["ErrorMessage"] = "No se encontró la sesión del usuario. Por favor, inicie sesión nuevamente.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Deserialize user object
+            var usuario = Objeto.StringToObject<Usuario>(usuarioString);
+            if (usuario == null || usuario.IdUsuario <= 0)
+            {
+                TempData["ErrorMessage"] = "La información del usuario no es válida. Por favor, inicie sesión nuevamente.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Get complete user information
+            var usuarioComplejo = BD.GetUsuarioComplejo(usuario.IdUsuario);
+            if (usuarioComplejo == null)
+            {
+                TempData["ErrorMessage"] = "No se pudo cargar la información del usuario. Por favor, intente nuevamente.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Get user's instruments
+            var instrumentosUsuario = BD.GetInstrumentos(usuario.IdUsuario) ?? new List<Instrumento>();
+            
+            ViewBag.usuario = usuarioComplejo;
+            ViewBag.instrumentos = instrumentosUsuario;
+            
+            return View("InformacionUsuario");
+        }
+        catch (Exception ex)
+        {
+            // Log the error (you should implement proper logging)
+            Console.WriteLine($"Error en InformacionUsuario: {ex.Message}");
+            
+            TempData["ErrorMessage"] = "Ocurrió un error al cargar la información del usuario. Por favor, intente nuevamente.";
+            return RedirectToAction("Index", "Home");
+        }
+    }
+}
+/**public IActionResult CambiarFotoPerfil(IFormFile fotoPerfil)
+{
+    Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+    Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+
+    if (cuenta == null || usuario == null)
+    {
+        return RedirectToAction("Login", "Account");
     }
 
+    if (fotoPerfil != null && fotoPerfil.Length > 0)
+    {
+        // Carpeta física donde se van a guardar las fotos
+        string carpetaFotos = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "usuarios");
 
+        if (!Directory.Exists(carpetaFotos))
+        {
+            Directory.CreateDirectory(carpetaFotos);
+        }
+
+        // Nombre del archivo (por ejemplo: usuario_5.jpg)
+        string extension = Path.GetExtension(fotoPerfil.FileName);
+        string nombreArchivo = "usuario_" + usuario.IdUsuario + extension;
+
+        string rutaFisica = Path.Combine(carpetaFotos, nombreArchivo);
+
+        using (FileStream archivoStream = new FileStream(rutaFisica, FileMode.Create))
+        {
+            fotoPerfil.CopyTo(archivoStream);
+        }
+
+        // Ruta que se guarda en la BD (para usar en <img src="...">)
+        string rutaParaGuardar = "/img/usuarios/" + nombreArchivo;
+
+        // Actualizar en la base de datos
+        BD.CambiarFotoPerfil(usuario.IdUsuario, rutaParaGuardar);
+
+        // Actualizar en sesión
+        usuario.FotoPerfil = rutaParaGuardar;
+        HttpContext.Session.SetString("usuario", Objeto.ObjectToString<Usuario>(usuario));
+    }
+
+    // Volver a la pantalla del usuario (cambia "MostrarUsuario" por la tuya)
+    return RedirectToAction("MostrarUsuario", "Account");
 }
+
+}**/

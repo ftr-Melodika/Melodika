@@ -1,0 +1,175 @@
+@{
+    ViewData["Title"] = "Información Extra";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-header bg-white border-0 py-3">
+                    <div class="d-flex align-items-center">
+                        <a href="@Url.Action("Configuracion", "Home")" class="btn btn-outline-secondary btn-sm me-3">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                        <h2 class="h5 mb-0">Información Adicional</h2>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <form class="needs-validation" novalidate>
+                        <!-- Sección de Datos Personales -->
+                        <div class="mb-4">
+                            <h5 class="mb-3 text-primary d-flex align-items-center">
+                                <i class="bi bi-person-lines-fill me-2"></i>
+                                <span>Datos Personales</span>
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" id="fechaNacimiento" required>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa tu fecha de nacimiento
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="genero" class="form-label">Género</label>
+                                    <select class="form-select" id="genero" required>
+                                        <option value="" selected disabled>Seleccionar</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                        <option value="otro">Otro</option>
+                                        <option value="prefiero-no-decir">Prefiero no decirlo</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor selecciona un género
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección de Ubicación -->
+                        <div class="mb-4">
+                            <h5 class="mb-3 text-primary d-flex align-items-center">
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                <span>Ubicación</span>
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="pais" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="pais" placeholder="Ej: Argentina">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="ciudad" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="ciudad" placeholder="Ej: Buenos Aires">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección Sobre Mí -->
+                        <div class="mb-4">
+                            <h5 class="mb-3 text-primary d-flex align-items-center">
+                                <i class="bi bi-info-circle-fill me-2"></i>
+                                <span>Sobre Mí</span>
+                            </h5>
+                            <div class="mb-4">
+                                <label for="biografia" class="form-label">Biografía</label>
+                                <textarea class="form-control" id="biografia" rows="3" 
+                                          placeholder="Cuéntanos un poco sobre ti..." 
+                                          maxlength="500"></textarea>
+                                <div class="form-text d-flex justify-content-between">
+                                    <span>Máximo 500 caracteres</span>
+                                    <span id="contador">0/500</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label d-block mb-2">Intereses Musicales</label>
+                                <div class="row g-2">
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rock" value="rock">
+                                            <label class="form-check-label" for="rock">Rock</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="pop" value="pop">
+                                            <label class="form-check-label" for="pop">Pop</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="jazz" value="jazz">
+                                            <label class="form-check-label" for="jazz">Jazz</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="clasica" value="clasica">
+                                            <label class="form-check-label" for="clasica">Música Clásica</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="electronica" value="electronica">
+                                            <label class="form-check-label" for="electronica">Electrónica</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="hiphop" value="hiphop">
+                                            <label class="form-check-label" for="hiphop">Hip Hop</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="reggaeton" value="reggaeton">
+                                            <label class="form-check-label" for="reggaeton">Reggaetón</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="otro" value="otro">
+                                            <label class="form-check-label" for="otro">Otro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="d-flex justify-content-end gap-2 pt-3 border-top">
+                            <a href="@Url.Action("Configuracion", "Home")" class="btn btn-outline-secondary px-4">
+                                <i class="bi bi-x-circle me-1"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-save me-1"></i> Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-label {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+    .card {
+        border-radius: 0.75rem;
+        overflow: hidden;
+    }
+    .card-header {
+        padding: 1.25rem 1.5rem;
+    }
+    .btn-outline-secondary {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
