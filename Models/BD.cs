@@ -7,7 +7,7 @@ using System.Linq;
 using System.Data;
 public static class BD
 {
-    private static string _connectionString = @"Server=localHost; DataBase = Melodika_DB; Trusted_Connection = true; TrustServerCertificate = true";
+    private static string _connectionString = @"Server=.\SQLEXPRESS; DataBase = Melodika_DB; Trusted_Connection = true; TrustServerCertificate = true";
 
 /*
 static public List<Cancion> seleccionarCancion()
@@ -80,7 +80,7 @@ static public List<Cancion> GetCanciones()
         return cuentaBuscada;
     }
 
-        static public List<Curso> getCursos(){
+    static public List<Curso> getCursos(){
         
         List<Curso> cursos = new List<Curso>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -106,7 +106,7 @@ static public List<Cancion> GetCanciones()
         return curso;
     }
 
-        static public List<Usuario> GetUsuariosCuentaSimple(int idCuenta){
+    static public List<Usuario> GetUsuariosCuentaSimple(int idCuenta){
             List<Usuario> usuarios = new List<Usuario>();
             
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -123,6 +123,17 @@ static public List<Cancion> GetCanciones()
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string storedProcedure = "GetUsuarioSimple";
+                usuarioBuscado = connection.QueryFirstOrDefault<Usuario>(storedProcedure,new{ idUsuario = idUsuario },commandType: CommandType.StoredProcedure);
+            }
+
+            return usuarioBuscado;
+        }
+
+    static public Usuario GetUsuarioComplejo(int idUsuario){
+            Usuario usuarioBuscado = new Usuario();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string storedProcedure = "GetUsuarioComplejo";
                 usuarioBuscado = connection.QueryFirstOrDefault<Usuario>(storedProcedure,new{ idUsuario = idUsuario },commandType: CommandType.StoredProcedure);
             }
 

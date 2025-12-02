@@ -166,7 +166,7 @@ public class AccountController : Controller
 
     public IActionResult SeleccionarInstrumento()
     {
-        return View("~/Views/Account/SeleccionarInstrumento.cshtml");
+        return View("SeleccionarInstrumento");
     }
 
     public IActionResult SeleccionarInstrumentoGuardar(int idInstrumento)
@@ -177,15 +177,15 @@ public class AccountController : Controller
         switch(reporte){
             case -1:
                 ViewBag.mensaje = "No hay un usuario seleccionado";
-                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
+                return View("SeleccionarInstrumento");
 
             case -2:
                 ViewBag.mensaje = "Algo salio mal.";
-                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
+                return View("SeleccionarInstrumento");
 
             default:
                 ViewBag.mensaje = "Instrumento seleccionado correctamente";
-                return View("~/Views/Account/SeleccionarInstrumento.cshtml");
+                return View("SeleccionarInstrumento");
         }
     }
 
@@ -197,4 +197,13 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home"); 
     }
 
+    public IActionResult InformacionUsuario()
+    {
+        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        Usuario usuarioComplejo = BD.GetUsuarioComplejo(usuario.IdUsuario);
+        ViewBag.usuario = usuarioComplejo;
+        List<Instrumento> instrumentosUsuario = BD.GetInstrumentos(usuario.IdUsuario);
+        ViewBag.instrumentos = instrumentosUsuario;
+        return View("InformacionUsuario");
+    }
 }

@@ -57,6 +57,7 @@ public class HomeController : Controller
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         
         if (cuenta == null){
+            ViewBag.mensaje = "Primero debe iniciar sesion para ver los cursos disponibles";
             return RedirectToAction("Login", "Account");
         }
         else{

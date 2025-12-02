@@ -96,6 +96,22 @@
               <a class="btn btn-outline-primary me-2" href='@Url.Action("Login", "Account")'>Iniciar sesión</a>
               <a class="btn btn-primary" href='@Url.Action("CrearCuenta", "Account")'>Crear Cuenta</a>
             }
+            else{
+              if(Objeto.StringToObject<Usuario>(Context.Session.GetString("usuario")) == null)
+              {
+                <a class="btn btn-outline-primary me-2" href='@Url.Action("MostrarUsuario", "Account")'>Seleccionar Usuario</a>
+
+              }
+              else{
+                Usuario usuarioActual = Objeto.StringToObject<Usuario>(Context.Session.GetString("usuario"));
+                <div class="d-flex align-items-center gap-2">
+                  <a href='@Url.Action(action: "InformacionUsuario", "Account")' class="d-flex align-items-center text-decoration-none text-dark">
+                  <img src="@usuarioActual.FotoPerfil" alt="FotoPerfil" class="rounded-circle" style="height:35px; width:35px; object-fit:cover;">
+                  <span class="ms-2 fw-500">@usuarioActual.Nombre</span>
+                  </a>
+                </div>
+              }
+            }
 
           </div>
         </div>
@@ -110,6 +126,7 @@
 
   <main role="main">
     @RenderBody()
+
   </main>
 
   <footer>

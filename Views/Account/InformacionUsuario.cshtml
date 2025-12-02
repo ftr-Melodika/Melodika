@@ -1,0 +1,65 @@
+@using melodika.Models
+@{
+    ViewData["Title"] = "Información del usuario";
+
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center g-4">
+        <section class="col-12 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <p class="text-muted mb-1">Racha actual</p>
+                    <h2 class="display-6 fw-bold mb-4 text-dark">@ViewBag.usuario.Racha</h2>
+
+                    
+                    @if (ViewBag.instrumentos != null)
+                    {
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            @foreach (var instrumento in ViewBag.instrumentos)
+                            {
+                                <p class="text-muted mb-1">Instrumento principal</p> <span class="badge bg-light text-dark border">@instrumento.NombreInstrumento</span>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted mb-3">Sin instrumentos seleccionados</p>
+                        <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-primary">Agregar instrumento</a>
+                    }
+
+                    <div class="d-flex flex-column gap-2">
+                        <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-outline-primary w-100">Agregar instrumento</a>
+                        <a href="@Url.Action("QuitarInstrumento", "Account")" class="btn btn-outline-danger w-100">Quitar instrumento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-12 col-lg-6">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <img src="@ViewBag.usuario.FotoPerfil" alt="Foto de @ViewBag.usuario.Nombre" class="rounded-circle"
+                             style="width: 340px; height: 340px; object-fit: cover; border: 4px solid #f0f0f0;">
+                        <button class="btn btn-secondary">Cambiar Foto</button>
+                    </div>
+
+                    <h2 class="fw-bold mb-3 text-dark">@ViewBag.usuario.Nombre</h2>
+                    <div class="d-flex flex-column gap-2 align-items-center mb-4">
+                        <div>
+                            <span class="text-muted">Fecha de nacimiento:</span>
+                            <span class="fw-semibold text-dark">@ViewBag.usuario.FechaNacimiento.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div>
+                            <span class="text-muted">Género:</span>
+                            <span class="fw-semibold text-dark">@ViewBag.usuario.Genero</span>
+                        </div>
+                    </div>
+
+                    <a href="@Url.Action("InfoExtraUsuario", "Account")" class="btn btn-dark px-4">Info extra</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

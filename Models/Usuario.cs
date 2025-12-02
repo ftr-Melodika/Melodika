@@ -29,6 +29,10 @@ public class Usuario
 
     [JsonProperty("IdCuenta")]
     public int IdCuenta { get; set; }
+
+    [JsonProperty("Racha")]
+    public int Racha { get; set; }
+
     public Usuario()
     {
 
