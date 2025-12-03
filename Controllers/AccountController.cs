@@ -153,19 +153,40 @@ public class AccountController : Controller
     public IActionResult SeleccionarUsuario(int idUsuario)
     {
         Usuario usuario = BD.GetUsuarioSimple(idUsuario);
-        if(usuario != null)
+        Usuario usuarioLogueado = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
+        if(usuarioLogueado != null)
         {
-            ViewBag.usuario = usuario;
-            string usuarioString = Objeto.ObjectToString(usuario); 
-            HttpContext.Session.SetString("usuario", usuarioString); 
-            return RedirectToAction("Cursos", "Home");
+            //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
+            HttpContext.Session.Remove("usuario");
+            if(usuario != null)
+            {
+                ViewBag.usuario = usuario;
+                string usuarioString = Objeto.ObjectToString(usuario); 
+                HttpContext.Session.SetString("usuario", usuarioString); 
+                return RedirectToAction("Cursos", "Home");
+            }
+            else
+            {
+                
+                return RedirectToAction("MostrarUsuario", "Account",new {mensaje = "No hay usuarios disponibles para esta cuenta"});
+            }
         }
         else
         {
-            
-            return RedirectToAction("MostrarUsuario", "Account",new {mensaje = "No hay usuarios disponibles para esta cuenta"});
+            if(usuario != null)
+            {
+                ViewBag.usuario = usuario;
+                string usuarioString = Objeto.ObjectToString(usuario); 
+                HttpContext.Session.SetString("usuario", usuarioString); 
+                return RedirectToAction("Cursos", "Home");
+            }
+            else
+            {
+                
+                return RedirectToAction("MostrarUsuario", "Account",new {mensaje = "No hay usuarios disponibles para esta cuenta"});
+            }
         }
-        //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
+            
     }
 
     public IActionResult SeleccionarInstrumento(string mensaje="")

@@ -58,7 +58,7 @@ public class HomeController : Controller
         
         if (cuenta == null){
             ViewBag.mensaje = "Primero debe iniciar sesion para ver los cursos disponibles";
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Login", "Account"); //poner mensaje aca
         }
         else{
             if(usuario != null){
@@ -69,7 +69,9 @@ public class HomeController : Controller
                 }
                 else{            
                     List<Curso> cursos = BD.getCursos();
+                    int idInstrumento = BD.GetIdInstrumento(usuario.IdUsuario);
                     ViewBag.cursos = cursos;
+                    ViewBag.instrumentoUsuario = idInstrumento;
                     return View("Cursos");
                 }
             }

@@ -21,5 +21,5 @@ public class Curso
     public string Foto { get; set; }
 
     [JsonProperty("NombreInstrumento")]
-    public string nombreInstrumento { get; set; }
+    public  string nombreInstrumento { get; set; }
 }

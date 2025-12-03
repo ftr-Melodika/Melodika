@@ -9,7 +9,7 @@
     <div class="row justify-content-center g-4">
         
         <div class="col-md-5 col-lg-3">
-            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 1 })" class="text-decoration-none text-dark">
+            <a href="javascript:void(0);" onclick="abrirModal(1, 'Guitarra')" class="text-decoration-none text-dark">
                 <div class="instrument-card">
                     <div class="instrument-img-container">
                         <img src="/imagenes/guitar-icon.png" alt="Guitarra" class="instrument-img">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-md-5 col-lg-3">
-            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 2 })" class="text-decoration-none text-dark">
+            <a href="javascript:void(0);" onclick="abrirModal(2, 'Piano')" class="text-decoration-none text-dark">
                 <div class="instrument-card">
                     <div class="instrument-img-container">
                         <img src="/imagenes/piano-icon.png" alt="Piano" class="instrument-img">
@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-md-5 col-lg-3">
-            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 3 })" class="text-decoration-none text-dark">
+            <a href="javascript:void(0);" onclick="abrirModal(3, 'Violín')" class="text-decoration-none text-dark">
                 <div class="instrument-card">
                     <div class="instrument-img-container">
                         <img src="/imagenes/violin-icon.png" alt="Violín" class="instrument-img">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="col-md-5 col-lg-3">
-            <a href="@Url.Action("SeleccionarInstrumentoGuardar", "Account", new { idInstrumento = 4 })" class="text-decoration-none text-dark">
+            <a href="javascript:void(0);" onclick="abrirModal(4, 'Ukelele')" class="text-decoration-none text-dark">
                 <div class="instrument-card">
                     <div class="instrument-img-container">
                         <img src="/imagenes/ukulele-icon.png" alt="Ukelele" class="instrument-img">
@@ -72,12 +72,18 @@
             @if(ViewBag.mensaje == "Para seleccionar un nuevo instrumento primero debe quitar el anterior.")
             {
                 @ViewBag.mensaje
-                <a href="@Url.Action("quitarInstrumento", "Account")" class="btn btn-primary mt-2">Quitar instrumento</a>
+                <div class="mt-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBorrar">
+                        Quitar instrumento
+                    </button>
+                </div>
             }
             else if (ViewBag.mensaje == "Ya tenés seleccionado este instrumento." || ViewBag.mensaje == "Instrumento seleccionado correctamente"){
-                @ViewBag.mensaje
-                <a href="@Url.Action("Cursos", "Home")" class="btn btn-primary mt-2">Ir a cursos</a>
-            }
+                <div class="d-flex flex-column align-items-center">
+                    <span class="fs-5 mb-2">@ViewBag.mensaje</span>
+                    <a href="@Url.Action("Cursos", "Home")" class="btn btn-primary px-4">Ir a cursos</a>
+                </div>
+}
             else
             {
                 @ViewBag.mensaje
@@ -85,3 +91,57 @@
         </div>
     }
 </div>
+
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar selección</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>¿Estás seguro de que querés elegir <strong id="nombreInstrumentoModal"></strong>?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="#" id="btnConfirmarSeleccion" class="btn btn-primary">Sí, elegir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalBorrar" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¿Borrar instrumento?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>¿Estás seguro de que querés quitar tu instrumento actual?</p>
+        <p class="text-muted small">Podrás elegir uno nuevo inmediatamente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="@Url.Action("quitarInstrumento", "Account")" class="btn btn-danger">Sí, quitar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    function abrirModal(id, nombre) {
+        // 1. Ponemos el nombre del instrumento en el texto del modal
+        document.getElementById("nombreInstrumentoModal").innerText = nombre;
+
+        // 2. Construimos la URL correcta para el controlador
+        var urlBase = '@Url.Action("SeleccionarInstrumentoGuardar", "Account")';
+        
+        // 3. Asignamos la URL completa al botón del modal
+        document.getElementById("btnConfirmarSeleccion").href = urlBase + "?idInstrumento=" + id;
+
+        // 4. Mostramos el modal usando Bootstrap
+        var myModal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+        myModal.show();
+    }
+</script>
