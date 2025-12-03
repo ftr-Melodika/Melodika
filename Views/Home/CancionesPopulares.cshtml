@@ -19,57 +19,78 @@
         <div class="canciones-grid">
             @foreach (Cancion cancion in ViewBag.canciones)
             {
-                @if (cancion.Titulo == "Flaca")
-                {
-                    <a href="@Url.Action("CancionesPopularesAdentroHard", "Home")" class="song-card-link">
-                        <div class="song-card">
-                            <img src="" alt="Foto Cancion" />
-                            <div class="song-info">
-                                <h3>@cancion.Titulo - @cancion.Autor</h3>
-                                <div class="song-meta">
-                                    <span>@cancion.Dificultad</span>
-                                    <div class="canciones-estrellas">
-                                        @switch(cancion.Valoracion){
-                                            case 0:<span>⭐☆☆</span>
-                                            break;
-                                            case 1:<span>⭐⭐☆</span>
-                                            break;
-                                            case 2:<span>⭐⭐⭐</span>
-                                            break;
-                                            default: <span>☆☆☆</span>
-                                            break;
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                }
-                else
-                {
+               
+                string urlDestino = Url.Action("CancionesPopularesAdentroHard", "Home");
+
+                
+                <a href="javascript:void(0);" 
+                   class="song-card-link"
+                   onclick="validarInstrumento(@cancion.IdInstrumento, '@urlDestino', '@cancion.Titulo')">
+                   
                     <div class="song-card">
-                        <img src="" alt="Foto Cancion" />
+                        <img src="@(string.IsNullOrEmpty(cancion.Portada) ? "/imagenes/default.jpg" : cancion.Portada)" alt="Foto Cancion" />
+                        
                         <div class="song-info">
                             <h3>@cancion.Titulo - @cancion.Autor</h3>
                             <div class="song-meta">
                                 <span>@cancion.Dificultad</span>
                                 <div class="canciones-estrellas">
                                     @switch(cancion.Valoracion){
-                                        case 0:<span>⭐☆☆</span>
-                                        break;
-                                        case 1:<span>⭐⭐☆</span>
-                                        break;
-                                        case 2:<span>⭐⭐⭐</span>
-                                        break;
-                                        default: <span>☆☆☆</span>
-                                        break;
+                                        case 0:<span>⭐☆☆</span> break;
+                                        case 1:<span>⭐⭐☆</span> break;
+                                        case 2:<span>⭐⭐⭐</span> break;
+                                        default: <span>☆☆☆</span> break;
                                     }
                                 </div>
                             </div>
                         </div>
                     </div>
-                }
+                </a>
             }
         </div>
     </section>
 </section>
+
+<div class="modal fade" id="modalAdvertencia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title text-dark fw-bold">⚠️ Instrumento diferente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="mb-3">La canción <strong id="nombreCancionModal"></strong> es para otro instrumento.</p>
+        <p class="text-muted small">Podés entrar igual, pero la tablatura no coincidirá con lo que tocás.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="#" id="btnSeguirIgual" class="btn btn-primary">Seguir igual</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+   
+    var idInstrumentoUsuario = @ViewBag.instrumentoUsuario;
+
+    function validarInstrumento(idInstrumentoCancion, urlDestino, titulo) {
+        
+ 
+        if (idInstrumentoUsuario == idInstrumentoCancion) {
+            window.location.href = urlDestino; // Redirige a la URL de destino
+        } 
+       
+        else {
+            // Ponemos el nombre de la canción en el texto del modal
+            document.getElementById("nombreCancionModal").innerText = titulo;
+            
+            // Configuramos el botón "Seguir igual" con la URL de destino
+            document.getElementById("btnSeguirIgual").href = urlDestino;
+            
+            // Abrimos el modal usando Bootstrap
+            var myModal = new bootstrap.Modal(document.getElementById('modalAdvertencia'));
+            myModal.show();
+        }
+    }
+</script>

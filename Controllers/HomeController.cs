@@ -35,9 +35,12 @@ public class HomeController : Controller
 
     public IActionResult CancionesPopulares()
     {
+        Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         List<Cancion> canciones = new List<Cancion>();
         canciones = BD.GetCanciones();
         ViewBag.canciones = canciones;
+        int instrumento = BD.GetIdInstrumento(usuario.IdUsuario);
+        ViewBag.instrumentoUsuario = instrumento;
         return View("CancionesPopulares");
     }
 
@@ -102,19 +105,20 @@ public class HomeController : Controller
 
     public IActionResult CursoAdentro(int id)
     {
-        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
-        if (cuenta == null)
-        {
-            return RedirectToAction("Login", "Account");
-        }
+
 
         Curso curso = BD.getCursoPorId(id);
         if (curso == null)
         {
-            return RedirectToAction("Cursos");
+            return RedirectToAction("Cursos", "Home", new { mensaje = "El curso no existe." });
+        }
+        else
+        {
+            ViewBag.curso = curso;
+            return View("CursoAdentro");
         }
 
-        return View("CursoAdentro", curso);
+        
     }
 
     public IActionResult Feedback()
@@ -122,6 +126,8 @@ public class HomeController : Controller
         return View("Feedback");
     }
 
+    
+/*
     public IActionResult PersonalizarExperiencia()
     {
         // Check if user is logged in
@@ -144,5 +150,12 @@ public class HomeController : Controller
         }
 
         return View();
+    }
+
+*/
+
+    public IActionResult ComenzarCurso(int idCurso)
+    {
+        return View("ComenzarCurso");
     }
 }

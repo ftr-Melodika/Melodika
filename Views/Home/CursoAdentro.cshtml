@@ -1,21 +1,21 @@
 @model melodika.Models.Curso
 @{
-    ViewData["Title"] = Model?.TituloCurso ?? "Curso no encontrado";
+    ViewData["Title"] = ViewBag.curso?.TituloCurso ?? "Curso no encontrado";
 }
 
-@if (Model != null)
+@if (ViewBag.curso != null)
 {
     <div class="curso-detalle">
         <div class="curso-cabecera">
-            <h1>@Model.TituloCurso</h1>
-            <p class="instrumento">Instrumento: @Model.nombreInstrumento</p>
+            <h1>@ViewBag.curso.TituloCurso</h1>
+            <p class="instrumento">Instrumento: @ViewBag.curso.nombreInstrumento</p>
         </div>
         
         <div class="curso-contenido">
             <div class="curso-imagen">
-                @if (!string.IsNullOrEmpty(Model.Foto))
+                @if (!string.IsNullOrEmpty(ViewBag.curso.Foto))
                 {
-                    <img src="@Model.Foto" alt="@Model.TituloCurso" class="img-fluid">
+                    <img src="@ViewBag.curso.Foto" alt="@ViewBag.curso.TituloCurso" class="img-fluid">
                 }
                 else
                 {
@@ -27,16 +27,16 @@
             
             <div class="curso-descripcion">
                 <h2>Descripción del curso</h2>
-                <p>@Model.Descripcion</p>
+                <p>@ViewBag.curso.Descripcion</p>
             </div>
             
             <div class="curso-acciones">
                 <a href="@Url.Action("Cursos", "Home")" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Volver a los cursos
                 </a>
-                <button class="btn btn-primary">
-                    <i class="fas fa-play"></i> Comenzar curso
-                </button>
+                
+                    <a  class="btn btn-primary" href="@Url.Action("ComenzarCurso", "Home", new { id = ViewBag.curso.IdCurso })"><i class="fas fa-play"></i> Comenzar curso</a>
+          
             </div>
         </div>
     </div>
