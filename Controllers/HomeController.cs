@@ -14,8 +14,12 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string mensaje = "")
     {
+        if (mensaje != null && mensaje != "")
+        {
+            ViewBag.Mensaje = mensaje;
+        }
         return View();
     }
 
@@ -36,12 +40,27 @@ public class HomeController : Controller
     public IActionResult CancionesPopulares()
     {
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
-        List<Cancion> canciones = new List<Cancion>();
-        canciones = BD.GetCanciones();
-        ViewBag.canciones = canciones;
-        int instrumento = BD.GetIdInstrumento(usuario.IdUsuario);
-        ViewBag.instrumentoUsuario = instrumento;
-        return View("CancionesPopulares");
+        Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));
+        if (cuenta == null){
+            return RedirectToAction("Login", "Account" , new { mensaje = "Primero debe iniciar sesion para ver las canciones populares" }); 
+        }
+        else
+        {
+            if (usuario == null){
+            return RedirectToAction("MostrarUsuario", "Account" , new { mensaje = "Primero debe iniciar sesion para ver las canciones populares" }); 
+            }
+            else
+            {
+                List<Cancion> canciones = new List<Cancion>();
+                canciones = BD.GetCanciones();
+                ViewBag.canciones = canciones;
+                int instrumento = BD.GetIdInstrumento(usuario.IdUsuario);
+                ViewBag.instrumentoUsuario = instrumento;
+                return View("CancionesPopulares");
+            }    
+        }
+        
+        
     }
 
 
@@ -60,15 +79,13 @@ public class HomeController : Controller
         Usuario usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
         
         if (cuenta == null){
-            ViewBag.mensaje = "Primero debe iniciar sesion para ver los cursos disponibles";
-            return RedirectToAction("Login", "Account"); //poner mensaje aca
+            return RedirectToAction("Login", "Account" , new { mensaje = "Primero debe iniciar sesion para ver los cursos disponibles" }); //poner mensaje aca
         }
         else{
             if(usuario != null){
                 List<Instrumento> instrumentos = BD.GetInstrumentos(usuario.IdUsuario);
                 if(instrumentos.Count == 0){
-                    ViewBag.mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles";
-                    return RedirectToAction("SeleccionarInstrumento", "Account");//poner lo de mensaje en esa vista
+                    return RedirectToAction("SeleccionarInstrumento", "Account", new { mensaje = "Primero debe agregar un instrumento en su perfil para ver los cursos disponibles" });//poner lo de mensaje en esa vista
                 }
                 else{            
                     List<Curso> cursos = BD.getCursos();
@@ -79,8 +96,7 @@ public class HomeController : Controller
                 }
             }
             else{
-                ViewBag.mensaje = "Primero, seleccione un usuario";
-                return RedirectToAction("MostrarUsuario", "Account");//Aca tmb
+                return RedirectToAction("MostrarUsuario", "Account", new { mensaje = "Primero, seleccione un usuario" });//Aca tmb
             }
        
         }

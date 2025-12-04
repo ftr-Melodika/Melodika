@@ -13,10 +13,14 @@ public class AccountController : Controller
         _logger = logger;
     }
 
-        public IActionResult Login()
+        public IActionResult Login(string mensaje = "")
     {
         Cuenta cuenta = Objeto.StringToObject<Cuenta>(HttpContext.Session.GetString("cuenta"));//Saca de sesion
         if (cuenta == null){
+            if (mensaje != "")
+            {
+                ViewBag.mensaje = mensaje;
+            }
             return View("Login");
         }
         else{
@@ -83,19 +87,18 @@ public class AccountController : Controller
                 case -1:
                     ViewBag.mensaje = "El correo ya está en uso";
                     return View("CrearCuenta");
-                    break;
+                    
                 case -2:
                     ViewBag.mensaje = "El nombre de usuario ya está en uso";
                     return View("CrearCuenta");
-                    break;
+                   
                 case -3:
                     ViewBag.mensaje = "Hubo un error al crear la cuenta";
                     return View("CrearCuenta");
-                    break;
+                  
                 default:
-                    ViewBag.mensaje = "Cuenta creada correctamente";
-                    return RedirectToAction("Login", "Account"); //PONER MENSAJE ACA
-                    break;
+                    return RedirectToAction("Login", "Account", new { mensaje = "Cuenta creada correctamente" }); 
+                   
             }
             
 
@@ -153,40 +156,23 @@ public class AccountController : Controller
     public IActionResult SeleccionarUsuario(int idUsuario)
     {
         Usuario usuario = BD.GetUsuarioSimple(idUsuario);
-        Usuario usuarioLogueado = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("usuario"));
-        if(usuarioLogueado != null)
+        
+ 
+        if (usuario != null)
         {
-            //SI HAY UNO LOGUADO, BORRAR AL LOGUADO Y PONER AL OTRO
             HttpContext.Session.Remove("usuario");
-            if(usuario != null)
-            {
-                ViewBag.usuario = usuario;
-                string usuarioString = Objeto.ObjectToString(usuario); 
-                HttpContext.Session.SetString("usuario", usuarioString); 
-                return RedirectToAction("Cursos", "Home");
-            }
-            else
-            {
-                
-                return RedirectToAction("MostrarUsuario", "Account",new {mensaje = "No hay usuarios disponibles para esta cuenta"});
-            }
+            ViewBag.usuario = usuario;
+            string usuarioString = Objeto.ObjectToString(usuario); 
+            HttpContext.Session.SetString("usuario", usuarioString); 
+            
+            return RedirectToAction("Cursos", "Home");
         }
         else
         {
-            if(usuario != null)
-            {
-                ViewBag.usuario = usuario;
-                string usuarioString = Objeto.ObjectToString(usuario); 
-                HttpContext.Session.SetString("usuario", usuarioString); 
-                return RedirectToAction("Cursos", "Home");
-            }
-            else
-            {
-                
-                return RedirectToAction("MostrarUsuario", "Account",new {mensaje = "No hay usuarios disponibles para esta cuenta"});
-            }
+
+            string mensaje = "El usuario seleccionado no está disponible.";
+            return RedirectToAction("MostrarUsuario", "Account", new { mensaje = mensaje });
         }
-            
     }
 
     public IActionResult SeleccionarInstrumento(string mensaje="")
@@ -229,8 +215,8 @@ public class AccountController : Controller
     public IActionResult logout()
     {
         HttpContext.Session.Remove("cuenta");
-        ViewBag.mensaje = "Usted salió correctamente de la sesión.";
-        return RedirectToAction("Index", "Home"); //PONER MENSAJE
+        HttpContext.Session.Remove("usuario");
+        return RedirectToAction("Index", "Home", new { mensaje = "Usted salió correctamente de la sesión." });
     }
 
     public IActionResult InformacionUsuario(string mensaje)

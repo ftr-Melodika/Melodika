@@ -109,3 +109,10 @@
 
   </div>
 </section>
+  
+<script>
+  let mensaje = @Html.Raw(Json.Serialize(ViewBag.mensaje));
+  if (mensaje && mensaje !== '') {
+      alert(mensaje);
+  }
+</script>

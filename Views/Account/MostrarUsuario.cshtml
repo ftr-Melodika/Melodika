@@ -50,5 +50,11 @@ else
     <div>
       <a href='@Url.Action("LogOut", "Account")' class = "accion-primaria"> Cerrar sesion </a>
     </div>
-    <p>@ViewBag.mensaje</p>
   </main>
+
+  <script>
+  let mensaje = @Html.Raw(Json.Serialize(ViewBag.mensaje));
+  if (mensaje && mensaje !== '') {
+      alert(mensaje);
+  }
+</script>

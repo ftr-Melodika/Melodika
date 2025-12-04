@@ -70,27 +70,49 @@
   </div>
 </div>
 
-<script>
-   
-    var idInstrumentoUsuario = @ViewBag.instrumentoUsuario;
+<div class="modal fade" id="modalSinInstrumento" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title fw-bold">🎸 ¡Falta poco!</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <p class="fs-5">Para ver las canciones, primero necesitás elegir qué instrumento tocás.</p>
+        <p class="text-muted small">Esto nos ayuda a mostrarte las tablaturas correctas.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="@Url.Action("SeleccionarInstrumento", "Account")" class="btn btn-primary px-4">Elegir instrumento</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    function validarInstrumento(idInstrumentoCancion, urlDestino, titulo) {
-        
- 
-        if (idInstrumentoUsuario == idInstrumentoCancion) {
-            window.location.href = urlDestino; // Redirige a la URL de destino
-        } 
+<script>
+
+   var idInstrumentoUsuario = @(ViewBag.instrumentoUsuario ?? 0);
+
+   function validarInstrumento(idInstrumentoCancion, urlDestino, titulo) {
        
-        else {
-            // Ponemos el nombre de la canción en el texto del modal
-            document.getElementById("nombreCancionModal").innerText = titulo;
-            
-            // Configuramos el botón "Seguir igual" con la URL de destino
-            document.getElementById("btnSeguirIgual").href = urlDestino;
-            
-            // Abrimos el modal usando Bootstrap
-            var myModal = new bootstrap.Modal(document.getElementById('modalAdvertencia'));
-            myModal.show();
-        }
-    }
+       // 1. Caso Éxito
+       if (idInstrumentoUsuario == idInstrumentoCancion && idInstrumentoUsuario != 0) {
+           window.location.href = urlDestino; 
+       } 
+       
+       // 2. Caso Sin Instrumento (Abre el NUEVO Modal)
+       else if(idInstrumentoUsuario == 0){
+           var myModal = new bootstrap.Modal(document.getElementById('modalSinInstrumento'));
+           myModal.show();
+       }
+       
+       // 3. Caso Instrumento Diferente (Abre el Modal Advertencia)
+       else {
+           document.getElementById("nombreCancionModal").innerText = titulo;
+           document.getElementById("btnSeguirIgual").href = urlDestino;
+           
+           var myModal = new bootstrap.Modal(document.getElementById('modalAdvertencia'));
+           myModal.show();
+       }
+   }
 </script>
